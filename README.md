@@ -3,6 +3,14 @@
 # [Project] Person and Car Re-Identification (ReID)
 </div>
 
+## 🎯 Project Introduction
+
+1. 👥 This project implements **person** and **vehicle** Re-Identification (ReID) tasks, supporting training, testing, and online inference workflows.  
+2. 📂 The project structure includes **dataset processing scripts**, **model code**, a directory for **pre-trained models**, and **evaluation tools**.  
+3. ⚙️ It provides a complete usage pipeline, including **environment setup**, **data preparation** (for both person and car datasets), as well as **training** and **testing scripts**.  
+4. 📊 The person ReID datasets include multiple standard benchmarks such as **CUHK**, **Market-1501**, **ICFG-PEDES**, and **RSTP-Reid**.  
+5. 🚗 It also supports **vehicle ReID datasets** collected from real-road videos, covering **object extraction**, **data cleaning**, and **dataset splitting**.  
+
 ## 📣 Updates
 * **[2025, 08]**: We have released the complete ReID training and testing code.
 
