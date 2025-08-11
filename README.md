@@ -38,11 +38,9 @@ pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 -f https://download.pyto
     - RSTP-Reid
   - person_jsons
     - test_query.json
-      - {
-          "id": 0, \
-          "tar_path": "test_query/p3810/p3810_s4782.jpg", \
-          "can_path": "test_query/p3810/p3810_s4781.jpg"  \
-        },
+      - {"id": 0, "tar_path": "test_query/p3810/p3810_s4782.jpg", "can_path": "test_query/p3810/p3810_s4781.jpg"},
+      - {"id": 1, "tar_path": "test_query/p7463/p7463_s9933.jpg", "can_path": "test_query/p7463/p7463_s9932.jpg"},
+      - ...
     - train_cam_a_b.json
     - train_CUKH01.json
     - ...
@@ -74,7 +72,7 @@ where data organization is identical to that of the *person* dataset, and note t
 
 #### Download Pretrain Models
 
-<div align=left>
+<div align="center">
 
 |  Models  |                                                              Download Link                                                              |             Functions              |                                         Features                                         |
 |:--------:|:---------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------:|:----------------------------------------------------------------------------------------:|
@@ -126,16 +124,16 @@ To enable real-time visualization of the retrieval process without pre-storing a
 ```shell
 python reid_online.py
 ```
-<p float="center">
+<p align="center">
   <img src="figures/target.jpg" width="22%" />
   <img src="figures/vis-1.jpg" width="35%" />
   <img src="figures/vis-2.jpg" width="35%" />
 </p>
 
 ## 💪 Feature Enhancement
-<p float="center">
-  <img src="figures/fe-1.jpg" width="27.2%" />
-  <img src="figures/fe-2.jpg" width="50%" />
+<p align="center">
+  <img src="figures/fe-1.jpg" width="34.25%" />
+  <img src="figures/fe-2.jpg" width="63%" />
 </p>
 
 Feature enhancement includes single-feature re-representation and multi-feature aggregation. 
