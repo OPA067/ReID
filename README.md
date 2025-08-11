@@ -187,7 +187,7 @@ where $I$=`[CLS]`$\in \mathcal{R}^{1 \times D}$ and $P$=`[Patch]`$=Model(P) \in 
 [轻量型密集型特征提取器实验报告](https://allcaminfo.feishu.cn/docx/KvcxdtCOuoLadIxlCkZcNQvJn7f) update 2025, 08.
 
 ## 📌 Hint
-For more details, please contact [223081200014@smail.swufe.edu.cn](mailto:23081200014@smail.swufe.edu.cn)
+If you encounter any issues, feel free to contact [223081200014@smail.swufe.edu.cn](mailto:23081200014@smail.swufe.edu.cn)
 
 ## 🎗️ Acknowledgments
 Our code is based on [CVPR2024RDE](https://github.com/QinYang79/RDE), [CVPR2024HBI](https://github.com/jpthu17/HBI/tree/main). We sincerely appreciate for their contributions.
