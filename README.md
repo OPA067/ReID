@@ -18,6 +18,14 @@
 
 ---
 
+## Updates
+
+- **[2025.08]** Initial release — complete training & evaluation pipeline.
+- **[2026.08]** Re-organized project structure; added self-contained `online/` inference module with standardized English docstrings; added architecture diagrams and detailed README.
+- **[2026.09]** Refined README to strictly match the actual codebase: corrected `model/cluster.py` description, removed non-existent CLI flags, fixed deployment paths, and expanded the API reference for `ReIDInfer`.
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -58,14 +66,6 @@ Person Re-Identification aims to match a target person image against a gallery o
 | **Evaluation** | CMC metrics computed on GPU-parallel embedding extraction |
 | **Config** | YAML-based configuration snapshots saved alongside each checkpoint; all args loaded as `EasyDict` for attribute-style access |
 | **Online Mode** | Standalone `module_reid` package: no dependency on the training codebase except PyTorch and Ultralytics |
-
----
-
-## Updates
-
-- **[2025.08]** Initial release — complete training & evaluation pipeline.
-- **[2026.08]** Re-organized project structure; added self-contained `online/` inference module with standardized English docstrings; added architecture diagrams and detailed README.
-- **[2026.09]** Refined README to strictly match the actual codebase: corrected `model/cluster.py` description, removed non-existent CLI flags, fixed deployment paths, and expanded the API reference for `ReIDInfer`.
 
 ---
 
