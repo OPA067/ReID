@@ -6,7 +6,7 @@
 [![PyTorch ≥2.0](https://img.shields.io/badge/pytorch-≥2.0-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**v1.0 — Stable Release**
+**v1.0 — Stable Release** 🎉
 
 </div>
 
