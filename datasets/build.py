@@ -1,0 +1,177 @@
+"""
+DataLoader construction and image transformation utilities.
+
+Provides standardized image preprocessing pipelines for training and testing,
+as well as the build_dataloader factory function that assembles the dataset
+and PyTorch DataLoader based on the command-line arguments.
+"""
+
+import logging
+import torch
+import torchvision.transforms as T
+from torch.utils.data import DataLoader
+from datasets.sampler import RandomIdentitySampler
+from datasets.sampler_ddp import RandomIdentitySampler_DDP
+
+from utils.comm import get_world_size
+
+from .bases import ImageTextDataset
+from .rstpreid import RSTPReid
+
+__factory = {'RSTPReid': RSTPReid}
+
+
+def build_transforms(img_size=(384, 128), aug=False, is_train=True):
+    """
+    Build the torchvision image preprocessing pipeline.
+
+    Normalization constants are those used by OpenAI CLIP:
+        mean = [0.48145466, 0.4578275, 0.40821073]
+        std  = [0.26862954, 0.26130258, 0.27577711]
+
+    Args:
+        img_size (tuple): Target image resolution (height, width).
+        aug (bool): Whether to apply data augmentation (RandomCrop, RandomErasing).
+        is_train (bool): True for training transform, False for evaluation transform.
+
+    Returns:
+        torchvision.transforms.Compose: The composed transform pipeline.
+    """
+    height, width = img_size
+
+    # Default CLIP normalization coefficients.
+    mean = [0.48145466, 0.4578275, 0.40821073]
+    std = [0.26862954, 0.26130258, 0.27577711]
+
+    if not is_train:
+        transform = T.Compose([
+            T.Resize((height, width)),
+            T.ToTensor(),
+            T.Normalize(mean=mean, std=std),
+        ])
+        return transform
+
+    # Training transform pipeline.
+    if aug:
+        transform = T.Compose([
+            T.Resize((height, width)),
+            T.RandomHorizontalFlip(0.5),
+            T.Pad(10),
+            T.RandomCrop((height, width)),
+            T.ToTensor(),
+            T.Normalize(mean=mean, std=std),
+            T.RandomErasing(scale=(0.02, 0.4), value=mean),
+        ])
+    else:
+        transform = T.Compose([
+            T.Resize((height, width)),
+            T.RandomHorizontalFlip(0.5),
+            T.ToTensor(),
+            T.Normalize(mean=mean, std=std),
+        ])
+    return transform
+
+
+def collate(batch):
+    """
+    Collate function that converts a list of dict samples into a dict of batched tensors.
+
+    This is required because the default PyTorch collate doesn’t handle mixed types
+    (int vs. Tensor) correctly for image-text pairs.
+
+    Args:
+        batch (list[dict]): List of samples from the dataset.
+
+    Returns:
+        dict: Dictionary where each key maps to a stacked tensor or tensor list.
+    """
+    keys = set([key for b in batch for key in b.keys()])
+    dict_batch = {k: [dic[k] if k in dic else None for dic in batch] for k in keys}
+
+    batch_tensor_dict = {}
+    for k, v in dict_batch.items():
+        if isinstance(v[0], int):
+            batch_tensor_dict.update({k: torch.tensor(v)})
+        elif torch.is_tensor(v[0]):
+             batch_tensor_dict.update({k: torch.stack(v)})
+        else:
+            raise TypeError(f"Unexpected data type: {type(v[0])} in a batch.")
+
+    return batch_tensor_dict
+
+
+def build_dataloader(args, tranforms=None):
+    """
+    Factory function to build dataset and DataLoader according to the configuration.
+
+    Args:
+        args: Parsed command-line / config namespace.
+        tranforms: Optional externally-provided transform (used in online mode).
+
+    Returns:
+        (train_loader, test_loader) if args.training is True.
+        test_loader if args.training is False.
+    """
+    logger = logging.getLogger("reid")
+    num_workers = args.num_workers
+    dataset = __factory[args.dataset_name](root=args.root_dir)
+
+    if args.training:
+        # ------------------------------------------------------------------
+        # Training phase: build both train and test loaders.
+        # ------------------------------------------------------------------
+        train_transforms = build_transforms(img_size=args.img_size, aug=args.img_aug, is_train=True)
+        test_transforms = build_transforms(img_size=args.img_size, is_train=False)
+
+        train_set = ImageTextDataset(dataset.train, args, train_transforms, text_length=args.text_length, my_aug_img=True)
+
+        # Sampler selection: identity-based vs. random.
+        if args.sampler == 'identity':
+            if args.distributed:
+                logger.info('Using DDP random identity sampler')
+                logger.info('DISTRIBUTED TRAIN START')
+                mini_batch_size = args.batch_size // get_world_size()
+                data_sampler = RandomIdentitySampler_DDP(dataset.train, args.batch_size, args.num_instance)
+                batch_sampler = torch.utils.data.sampler.BatchSampler(data_sampler, mini_batch_size, True)
+            else:
+                logger.info(
+                    f'using random identity sampler: '
+                    f'batch_size={args.batch_size}, '
+                    f'num_ids={args.batch_size // args.num_instance}, '
+                    f'num_instances={args.num_instance}'
+                )
+                train_loader = DataLoader(
+                    train_set,
+                    batch_size=args.batch_size,
+                    sampler=RandomIdentitySampler(dataset.train, args.batch_size, args.num_instance),
+                    num_workers=num_workers,
+                    collate_fn=collate
+                )
+        elif args.sampler == 'random':
+            logger.info('using random sampler')
+            train_loader = DataLoader(
+                train_set,
+                batch_size=args.batch_size,
+                shuffle=True,
+                num_workers=num_workers,
+                collate_fn=collate
+            )
+        else:
+            logger.error('unsupported sampler! Expected "identity" or "random", got {}'.format(args.sampler))
+
+        test_set = ImageTextDataset(dataset.test, args, test_transforms, text_length=args.text_length)
+        test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers=num_workers)
+        return train_loader, test_loader
+
+    else:
+        # ------------------------------------------------------------------
+        # Testing / inference phase: build only the test loader.
+        # ------------------------------------------------------------------
+        if tranforms:
+            test_transforms = tranforms
+        else:
+            test_transforms = build_transforms(img_size=args.img_size, is_train=False)
+
+        test_set = ImageTextDataset(dataset.test, args, test_transforms, text_length=args.text_length)
+        test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers=num_workers)
+        return test_loader

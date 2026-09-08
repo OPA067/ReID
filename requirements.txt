@@ -1,0 +1,39 @@
+# Core deep-learning framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Scientific computing
+numpy>=1.24.0
+pandas>=1.5.0
+
+# Image / video I/O and preprocessing
+Pillow>=9.0.0
+opencv-python>=4.8.0
+
+# Model utilities
+timm>=0.9.0
+transformers>=4.30.0
+
+# CLIP tokenizer dependencies
+ftfy>=6.1.0
+regex>=2023.0.0
+
+# Training & evaluation utilities
+tqdm>=4.65.0
+prettytable>=3.7.0
+easydict>=1.10
+tensorboard>=2.13.0
+
+# YAML configuration
+pyyaml>=6.0
+
+# Online inference (detection + visualization)
+ultralytics>=8.0.0
+cvzone>=1.5.0
+matplotlib>=3.7.0
+
+# Video decoding (optional, for future video-based extensions)
+decord>=0.6.0
+
+# AWS utilities (optional, for checkpoint storage)
+boto3>=1.28.0
