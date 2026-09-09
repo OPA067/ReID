@@ -1,0 +1,1024 @@
+2026-09-08 16:40:14,039 reid INFO: reid training using 1 GPU(s)
+2026-09-08 16:40:14,039 reid INFO: Namespace(local_rank=0, name='baseline', output_dir='experiments/20260908_164014_baseline_reid', log_period=100, eval_period=1, val_dataset='test', resume=False, resume_ckpt_file='', pretrain_choice='ViT-B/32', temperature=0.02, img_aug=False, txt_aug=False, cmt_depth=4, masked_token_rate=0.8, masked_token_unchanged_rate=0.1, lr_factor=5.0, loss_names='reid', img_size=(384, 128), stride_size=16, text_length=77, vocab_size=49408, optimizer='Adam', lr=1e-05, bias_lr_factor=2.0, momentum=0.9, weight_decay=4e-05, weight_decay_bias=0.0, alpha=0.9, beta=0.999, num_epoch=50, milestones=(20, 50), gamma=0.1, warmup_factor=0.1, warmup_epochs=5, warmup_method='linear', lrscheduler='cosine', target_lr=0, power=0.9, dataset_name='RSTPReid', sampler='random', num_instance=4, root_dir='/data/liuxin_data/reid', batch_size=32, test_batch_size=32, num_workers=8, training=True, distributed=False)
+2026-09-08 16:40:14,101 reid INFO: total training samples: 41010
+2026-09-08 16:40:14,101 reid INFO: total testing samples: 4101
+2026-09-08 16:40:14,114 reid INFO: using random sampler
+2026-09-08 16:40:16,994 reid INFO: total parameters: 73.031M
+2026-09-08 16:40:17,242 reid INFO: reid model zero-shot performance: 
+2026-09-08 16:40:27,065 reid INFO: 
++------+-----+-----+-----+------+-------+--------+
+| item |  R1 |  R5 | R10 | RSum |  MdR  |  MnR   |
++------+-----+-----+-----+------+-------+--------+
+| sims | 3.7 | 6.1 | 7.6 | 17.4 | 781.0 | 1166.9 |
++------+-----+-----+-----+------+-------+--------+
+2026-09-08 16:40:27,066 reid INFO: start training 🚀
+2026-09-08 16:40:50,077 reid INFO: epoch[1/50], iteration[100/1282], loss: 63.1965843201, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:04:31
+2026-09-08 16:41:12,266 reid INFO: epoch[1/50], iteration[200/1282], loss: 48.4461679077, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:04:04
+2026-09-08 16:41:34,590 reid INFO: epoch[1/50], iteration[300/1282], loss: 41.7172492154, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:03:41
+2026-09-08 16:41:56,964 reid INFO: epoch[1/50], iteration[400/1282], loss: 37.0525548077, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:03:18
+2026-09-08 16:42:19,386 reid INFO: epoch[1/50], iteration[500/1282], loss: 34.0027007599, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:02:55
+2026-09-08 16:42:41,785 reid INFO: epoch[1/50], iteration[600/1282], loss: 31.4951051195, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:02:33
+2026-09-08 16:43:04,209 reid INFO: epoch[1/50], iteration[700/1282], loss: 29.6159964991, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:02:10
+2026-09-08 16:43:26,623 reid INFO: epoch[1/50], iteration[800/1282], loss: 27.9571091217, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:01:48
+2026-09-08 16:43:49,066 reid INFO: epoch[1/50], iteration[900/1282], loss: 26.4261857078, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:01:25
+2026-09-08 16:44:11,493 reid INFO: epoch[1/50], iteration[1000/1282], loss: 25.3670963275, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:01:03
+2026-09-08 16:44:33,918 reid INFO: epoch[1/50], iteration[1100/1282], loss: 24.3643361497, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:00:40
+2026-09-08 16:44:56,345 reid INFO: epoch[1/50], iteration[1200/1282], loss: 23.4882318656, base lr: 1.00e-06, mem: 1654/10034MB, eta: 00:00:18
+2026-09-08 16:45:14,970 reid INFO: epoch 1 done. time: 4.8m, per batch: 0.225s, speed: 142.5 samples/s
+2026-09-08 16:45:14,971 reid INFO: validation results - epoch: 1
+2026-09-08 16:45:24,786 reid INFO: 
++------+------+------+------+-------+-----+------+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR  |
++------+------+------+------+-------+-----+------+
+| sims | 46.3 | 67.5 | 75.4 | 189.2 | 2.0 | 31.7 |
++------+------+------+------+-------+-----+------+
+2026-09-08 16:45:48,745 reid INFO: epoch[2/50], iteration[100/1282], loss: 11.5490647078, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:04:27
+2026-09-08 16:46:11,068 reid INFO: epoch[2/50], iteration[200/1282], loss: 11.2483203340, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:04:03
+2026-09-08 16:46:33,423 reid INFO: epoch[2/50], iteration[300/1282], loss: 11.0476796834, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:03:40
+2026-09-08 16:46:55,805 reid INFO: epoch[2/50], iteration[400/1282], loss: 10.6515960997, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:03:17
+2026-09-08 16:47:18,222 reid INFO: epoch[2/50], iteration[500/1282], loss: 10.3991520371, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:02:55
+2026-09-08 16:47:40,616 reid INFO: epoch[2/50], iteration[600/1282], loss: 10.0083209880, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:02:32
+2026-09-08 16:48:03,025 reid INFO: epoch[2/50], iteration[700/1282], loss: 9.7550593700, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:02:10
+2026-09-08 16:48:25,437 reid INFO: epoch[2/50], iteration[800/1282], loss: 9.3457076517, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:01:48
+2026-09-08 16:48:47,863 reid INFO: epoch[2/50], iteration[900/1282], loss: 9.0031234538, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:01:25
+2026-09-08 16:49:10,314 reid INFO: epoch[2/50], iteration[1000/1282], loss: 8.8363614433, base lr: 2.80e-06, mem: 1655/10050MB, eta: 00:01:03
+2026-09-08 16:49:32,722 reid INFO: epoch[2/50], iteration[1100/1282], loss: 8.6447842555, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:00:40
+2026-09-08 16:49:55,108 reid INFO: epoch[2/50], iteration[1200/1282], loss: 8.3518949714, base lr: 2.80e-06, mem: 1656/10050MB, eta: 00:00:18
+2026-09-08 16:50:13,441 reid INFO: epoch 2 done. time: 4.8m, per batch: 0.224s, speed: 142.8 samples/s
+2026-09-08 16:50:13,441 reid INFO: validation results - epoch: 2
+2026-09-08 16:50:23,221 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 59.8 | 81.5 | 88.2 | 229.5 | 1.0 | 8.4 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 16:50:47,929 reid INFO: epoch[3/50], iteration[100/1282], loss: 4.8041860211, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:04:26
+2026-09-08 16:51:10,207 reid INFO: epoch[3/50], iteration[200/1282], loss: 4.7555107804, base lr: 4.60e-06, mem: 1657/10078MB, eta: 00:04:02
+2026-09-08 16:51:32,523 reid INFO: epoch[3/50], iteration[300/1282], loss: 4.8279140326, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:03:39
+2026-09-08 16:51:54,852 reid INFO: epoch[3/50], iteration[400/1282], loss: 4.8523410495, base lr: 4.60e-06, mem: 1657/10078MB, eta: 00:03:17
+2026-09-08 16:52:17,227 reid INFO: epoch[3/50], iteration[500/1282], loss: 4.7662797132, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:02:54
+2026-09-08 16:52:39,602 reid INFO: epoch[3/50], iteration[600/1282], loss: 4.7851875627, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:02:32
+2026-09-08 16:53:01,987 reid INFO: epoch[3/50], iteration[700/1282], loss: 4.7441768091, base lr: 4.60e-06, mem: 1655/10078MB, eta: 00:02:10
+2026-09-08 16:53:24,360 reid INFO: epoch[3/50], iteration[800/1282], loss: 4.6773398415, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:01:47
+2026-09-08 16:53:46,788 reid INFO: epoch[3/50], iteration[900/1282], loss: 4.6135273347, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:01:25
+2026-09-08 16:54:09,201 reid INFO: epoch[3/50], iteration[1000/1282], loss: 4.5652967435, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:01:03
+2026-09-08 16:54:31,605 reid INFO: epoch[3/50], iteration[1100/1282], loss: 4.4937595846, base lr: 4.60e-06, mem: 1656/10078MB, eta: 00:00:40
+2026-09-08 16:54:53,996 reid INFO: epoch[3/50], iteration[1200/1282], loss: 4.4430450894, base lr: 4.60e-06, mem: 1657/10078MB, eta: 00:00:18
+2026-09-08 16:55:12,316 reid INFO: epoch 3 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 16:55:12,316 reid INFO: validation results - epoch: 3
+2026-09-08 16:55:22,169 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 63.5 | 85.8 | 91.8 | 241.1 | 1.0 | 4.5 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 16:55:46,987 reid INFO: epoch[4/50], iteration[100/1282], loss: 2.8427636315, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:04:27
+2026-09-08 16:56:09,275 reid INFO: epoch[4/50], iteration[200/1282], loss: 3.0085032248, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:04:03
+2026-09-08 16:56:31,615 reid INFO: epoch[4/50], iteration[300/1282], loss: 3.0679496890, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:03:40
+2026-09-08 16:56:53,967 reid INFO: epoch[4/50], iteration[400/1282], loss: 3.1470610683, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:03:17
+2026-09-08 16:57:16,326 reid INFO: epoch[4/50], iteration[500/1282], loss: 3.1914767078, base lr: 6.40e-06, mem: 1657/10094MB, eta: 00:02:55
+2026-09-08 16:57:38,693 reid INFO: epoch[4/50], iteration[600/1282], loss: 3.2240369088, base lr: 6.40e-06, mem: 1655/10094MB, eta: 00:02:32
+2026-09-08 16:58:01,109 reid INFO: epoch[4/50], iteration[700/1282], loss: 3.2000141926, base lr: 6.40e-06, mem: 1655/10094MB, eta: 00:02:10
+2026-09-08 16:58:23,517 reid INFO: epoch[4/50], iteration[800/1282], loss: 3.2471029180, base lr: 6.40e-06, mem: 1657/10094MB, eta: 00:01:47
+2026-09-08 16:58:45,897 reid INFO: epoch[4/50], iteration[900/1282], loss: 3.2430563867, base lr: 6.40e-06, mem: 1657/10094MB, eta: 00:01:25
+2026-09-08 16:59:08,269 reid INFO: epoch[4/50], iteration[1000/1282], loss: 3.2549439652, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:01:03
+2026-09-08 16:59:30,623 reid INFO: epoch[4/50], iteration[1100/1282], loss: 3.2495684033, base lr: 6.40e-06, mem: 1656/10094MB, eta: 00:00:40
+2026-09-08 16:59:52,997 reid INFO: epoch[4/50], iteration[1200/1282], loss: 3.2469001272, base lr: 6.40e-06, mem: 1655/10094MB, eta: 00:00:18
+2026-09-08 17:00:11,316 reid INFO: epoch 4 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 17:00:11,317 reid INFO: validation results - epoch: 4
+2026-09-08 17:00:21,179 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 65.2 | 86.9 | 92.8 | 245.0 | 1.0 | 4.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:00:45,924 reid INFO: epoch[5/50], iteration[100/1282], loss: 2.7224487264, base lr: 8.20e-06, mem: 1657/10078MB, eta: 00:04:26
+2026-09-08 17:01:08,201 reid INFO: epoch[5/50], iteration[200/1282], loss: 3.2208390907, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:04:02
+2026-09-08 17:01:30,517 reid INFO: epoch[5/50], iteration[300/1282], loss: 3.0209356704, base lr: 8.20e-06, mem: 1655/10078MB, eta: 00:03:39
+2026-09-08 17:01:52,886 reid INFO: epoch[5/50], iteration[400/1282], loss: 3.0285103933, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:03:17
+2026-09-08 17:02:15,243 reid INFO: epoch[5/50], iteration[500/1282], loss: 2.9228232290, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:02:54
+2026-09-08 17:02:37,643 reid INFO: epoch[5/50], iteration[600/1282], loss: 2.8802947305, base lr: 8.20e-06, mem: 1655/10078MB, eta: 00:02:32
+2026-09-08 17:03:00,005 reid INFO: epoch[5/50], iteration[700/1282], loss: 2.9770759322, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:02:10
+2026-09-08 17:03:22,378 reid INFO: epoch[5/50], iteration[800/1282], loss: 2.9425411364, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:01:47
+2026-09-08 17:03:44,745 reid INFO: epoch[5/50], iteration[900/1282], loss: 3.0027438833, base lr: 8.20e-06, mem: 1657/10078MB, eta: 00:01:25
+2026-09-08 17:04:07,111 reid INFO: epoch[5/50], iteration[1000/1282], loss: 3.0768672232, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:01:03
+2026-09-08 17:04:29,497 reid INFO: epoch[5/50], iteration[1100/1282], loss: 3.0664895123, base lr: 8.20e-06, mem: 1656/10078MB, eta: 00:00:40
+2026-09-08 17:04:51,894 reid INFO: epoch[5/50], iteration[1200/1282], loss: 3.0435237315, base lr: 8.20e-06, mem: 1657/10078MB, eta: 00:00:18
+2026-09-08 17:05:10,202 reid INFO: epoch 5 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 17:05:10,202 reid INFO: validation results - epoch: 5
+2026-09-08 17:05:20,009 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 64.6 | 87.2 | 92.8 | 244.6 | 1.0 | 4.2 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:05:42,857 reid INFO: epoch[6/50], iteration[100/1282], loss: 2.3620883177, base lr: 1.00e-05, mem: 1658/10110MB, eta: 00:04:28
+2026-09-08 17:06:05,175 reid INFO: epoch[6/50], iteration[200/1282], loss: 2.6487747593, base lr: 1.00e-05, mem: 1657/10110MB, eta: 00:04:03
+2026-09-08 17:06:27,493 reid INFO: epoch[6/50], iteration[300/1282], loss: 2.6279046582, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:03:40
+2026-09-08 17:06:49,831 reid INFO: epoch[6/50], iteration[400/1282], loss: 2.7365555043, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:03:17
+2026-09-08 17:07:12,185 reid INFO: epoch[6/50], iteration[500/1282], loss: 2.8720219911, base lr: 1.00e-05, mem: 1655/10110MB, eta: 00:02:55
+2026-09-08 17:07:34,564 reid INFO: epoch[6/50], iteration[600/1282], loss: 2.8361706497, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:02:32
+2026-09-08 17:07:56,946 reid INFO: epoch[6/50], iteration[700/1282], loss: 2.9306418829, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:02:10
+2026-09-08 17:08:19,308 reid INFO: epoch[6/50], iteration[800/1282], loss: 2.9377854263, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:01:47
+2026-09-08 17:08:41,681 reid INFO: epoch[6/50], iteration[900/1282], loss: 2.9419197346, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:01:25
+2026-09-08 17:09:04,068 reid INFO: epoch[6/50], iteration[1000/1282], loss: 2.9156481279, base lr: 1.00e-05, mem: 1658/10110MB, eta: 00:01:03
+2026-09-08 17:09:26,446 reid INFO: epoch[6/50], iteration[1100/1282], loss: 2.9245699955, base lr: 1.00e-05, mem: 1657/10110MB, eta: 00:00:40
+2026-09-08 17:09:48,846 reid INFO: epoch[6/50], iteration[1200/1282], loss: 2.9147359361, base lr: 1.00e-05, mem: 1656/10110MB, eta: 00:00:18
+2026-09-08 17:10:07,163 reid INFO: epoch 6 done. time: 4.8m, per batch: 0.224s, speed: 142.9 samples/s
+2026-09-08 17:10:07,163 reid INFO: validation results - epoch: 6
+2026-09-08 17:10:16,986 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 64.6 | 86.8 | 92.9 | 244.3 | 1.0 | 4.5 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:10:39,790 reid INFO: epoch[7/50], iteration[100/1282], loss: 2.1522061558, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:04:27
+2026-09-08 17:11:02,119 reid INFO: epoch[7/50], iteration[200/1282], loss: 1.8844464244, base lr: 9.99e-06, mem: 1656/10088MB, eta: 00:04:03
+2026-09-08 17:11:24,459 reid INFO: epoch[7/50], iteration[300/1282], loss: 1.8463670930, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:03:40
+2026-09-08 17:11:46,807 reid INFO: epoch[7/50], iteration[400/1282], loss: 1.8390493716, base lr: 9.99e-06, mem: 1657/10088MB, eta: 00:03:17
+2026-09-08 17:12:09,168 reid INFO: epoch[7/50], iteration[500/1282], loss: 2.0200359819, base lr: 9.99e-06, mem: 1656/10088MB, eta: 00:02:55
+2026-09-08 17:12:31,528 reid INFO: epoch[7/50], iteration[600/1282], loss: 2.0815310693, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:02:32
+2026-09-08 17:12:53,896 reid INFO: epoch[7/50], iteration[700/1282], loss: 2.1171075562, base lr: 9.99e-06, mem: 1657/10088MB, eta: 00:02:10
+2026-09-08 17:13:16,258 reid INFO: epoch[7/50], iteration[800/1282], loss: 2.1218423617, base lr: 9.99e-06, mem: 1656/10088MB, eta: 00:01:47
+2026-09-08 17:13:38,612 reid INFO: epoch[7/50], iteration[900/1282], loss: 2.1098202831, base lr: 9.99e-06, mem: 1658/10088MB, eta: 00:01:25
+2026-09-08 17:14:00,976 reid INFO: epoch[7/50], iteration[1000/1282], loss: 2.0989135685, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:01:03
+2026-09-08 17:14:23,348 reid INFO: epoch[7/50], iteration[1100/1282], loss: 2.2057204623, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:00:40
+2026-09-08 17:14:45,727 reid INFO: epoch[7/50], iteration[1200/1282], loss: 2.1843813375, base lr: 9.99e-06, mem: 1655/10088MB, eta: 00:00:18
+2026-09-08 17:15:04,035 reid INFO: epoch 7 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 17:15:04,035 reid INFO: validation results - epoch: 7
+2026-09-08 17:15:13,860 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 66.7 | 89.3 | 94.3 | 250.3 | 1.0 | 3.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:15:38,724 reid INFO: epoch[8/50], iteration[100/1282], loss: 2.0846091928, base lr: 9.95e-06, mem: 1656/10090MB, eta: 00:04:27
+2026-09-08 17:16:01,004 reid INFO: epoch[8/50], iteration[200/1282], loss: 1.9925214824, base lr: 9.95e-06, mem: 1656/10090MB, eta: 00:04:02
+2026-09-08 17:16:23,356 reid INFO: epoch[8/50], iteration[300/1282], loss: 1.9602476283, base lr: 9.95e-06, mem: 1655/10090MB, eta: 00:03:40
+2026-09-08 17:16:45,706 reid INFO: epoch[8/50], iteration[400/1282], loss: 1.9951394666, base lr: 9.95e-06, mem: 1657/10090MB, eta: 00:03:17
+2026-09-08 17:17:08,096 reid INFO: epoch[8/50], iteration[500/1282], loss: 1.9598210346, base lr: 9.95e-06, mem: 1656/10090MB, eta: 00:02:55
+2026-09-08 17:17:30,474 reid INFO: epoch[8/50], iteration[600/1282], loss: 1.9473243021, base lr: 9.95e-06, mem: 1657/10090MB, eta: 00:02:32
+2026-09-08 17:17:52,850 reid INFO: epoch[8/50], iteration[700/1282], loss: 1.8823690632, base lr: 9.95e-06, mem: 1655/10090MB, eta: 00:02:10
+2026-09-08 17:18:15,232 reid INFO: epoch[8/50], iteration[800/1282], loss: 1.8545377079, base lr: 9.95e-06, mem: 1655/10090MB, eta: 00:01:47
+2026-09-08 17:18:37,623 reid INFO: epoch[8/50], iteration[900/1282], loss: 1.8337383208, base lr: 9.95e-06, mem: 1657/10090MB, eta: 00:01:25
+2026-09-08 17:19:00,001 reid INFO: epoch[8/50], iteration[1000/1282], loss: 1.8448623611, base lr: 9.95e-06, mem: 1656/10090MB, eta: 00:01:03
+2026-09-08 17:19:22,381 reid INFO: epoch[8/50], iteration[1100/1282], loss: 1.8742324063, base lr: 9.95e-06, mem: 1656/10090MB, eta: 00:00:40
+2026-09-08 17:19:44,739 reid INFO: epoch[8/50], iteration[1200/1282], loss: 1.8474044024, base lr: 9.95e-06, mem: 1655/10090MB, eta: 00:00:18
+2026-09-08 17:20:03,037 reid INFO: epoch 8 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 17:20:03,037 reid INFO: validation results - epoch: 8
+2026-09-08 17:20:13,190 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 70.9 | 91.5 | 96.0 | 258.4 | 1.0 | 2.8 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:20:37,979 reid INFO: epoch[9/50], iteration[100/1282], loss: 1.7291612231, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:04:26
+2026-09-08 17:21:00,253 reid INFO: epoch[9/50], iteration[200/1282], loss: 1.5772903100, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:04:02
+2026-09-08 17:21:22,554 reid INFO: epoch[9/50], iteration[300/1282], loss: 1.6266900299, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:03:39
+2026-09-08 17:21:44,860 reid INFO: epoch[9/50], iteration[400/1282], loss: 1.5630210792, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:03:17
+2026-09-08 17:22:07,203 reid INFO: epoch[9/50], iteration[500/1282], loss: 1.6280803546, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:02:54
+2026-09-08 17:22:29,575 reid INFO: epoch[9/50], iteration[600/1282], loss: 1.5989936162, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:02:32
+2026-09-08 17:22:51,944 reid INFO: epoch[9/50], iteration[700/1282], loss: 1.5562127387, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:02:10
+2026-09-08 17:23:14,286 reid INFO: epoch[9/50], iteration[800/1282], loss: 1.6296409809, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:01:47
+2026-09-08 17:23:36,640 reid INFO: epoch[9/50], iteration[900/1282], loss: 1.6304511173, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:01:25
+2026-09-08 17:23:59,002 reid INFO: epoch[9/50], iteration[1000/1282], loss: 1.6268083879, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:01:03
+2026-09-08 17:24:21,364 reid INFO: epoch[9/50], iteration[1100/1282], loss: 1.6339416318, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:00:40
+2026-09-08 17:24:43,748 reid INFO: epoch[9/50], iteration[1200/1282], loss: 1.6425653802, base lr: 9.89e-06, mem: 1656/10134MB, eta: 00:00:18
+2026-09-08 17:25:02,059 reid INFO: epoch 9 done. time: 4.8m, per batch: 0.224s, speed: 143.1 samples/s
+2026-09-08 17:25:02,059 reid INFO: validation results - epoch: 9
+2026-09-08 17:25:11,871 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 72.0 | 92.1 | 96.3 | 260.4 | 1.0 | 2.5 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:25:36,598 reid INFO: epoch[10/50], iteration[100/1282], loss: 1.2875563125, base lr: 9.81e-06, mem: 1656/10056MB, eta: 00:04:26
+2026-09-08 17:25:58,834 reid INFO: epoch[10/50], iteration[200/1282], loss: 1.2905206717, base lr: 9.81e-06, mem: 1657/10056MB, eta: 00:04:02
+2026-09-08 17:26:21,116 reid INFO: epoch[10/50], iteration[300/1282], loss: 1.2917410238, base lr: 9.81e-06, mem: 1658/10056MB, eta: 00:03:39
+2026-09-08 17:26:43,435 reid INFO: epoch[10/50], iteration[400/1282], loss: 1.5235369893, base lr: 9.81e-06, mem: 1658/10056MB, eta: 00:03:17
+2026-09-08 17:27:05,790 reid INFO: epoch[10/50], iteration[500/1282], loss: 1.5847541437, base lr: 9.81e-06, mem: 1657/10056MB, eta: 00:02:54
+2026-09-08 17:27:28,152 reid INFO: epoch[10/50], iteration[600/1282], loss: 1.5713063030, base lr: 9.81e-06, mem: 1657/10056MB, eta: 00:02:32
+2026-09-08 17:27:50,518 reid INFO: epoch[10/50], iteration[700/1282], loss: 1.5465654912, base lr: 9.81e-06, mem: 1655/10056MB, eta: 00:02:10
+2026-09-08 17:28:12,925 reid INFO: epoch[10/50], iteration[800/1282], loss: 1.5323494701, base lr: 9.81e-06, mem: 1655/10056MB, eta: 00:01:47
+2026-09-08 17:28:35,339 reid INFO: epoch[10/50], iteration[900/1282], loss: 1.5311973892, base lr: 9.81e-06, mem: 1656/10056MB, eta: 00:01:25
+2026-09-08 17:28:57,742 reid INFO: epoch[10/50], iteration[1000/1282], loss: 1.5444049221, base lr: 9.81e-06, mem: 1657/10056MB, eta: 00:01:03
+2026-09-08 17:29:20,134 reid INFO: epoch[10/50], iteration[1100/1282], loss: 1.5470961057, base lr: 9.81e-06, mem: 1657/10056MB, eta: 00:00:40
+2026-09-08 17:29:42,558 reid INFO: epoch[10/50], iteration[1200/1282], loss: 1.5823789295, base lr: 9.81e-06, mem: 1658/10056MB, eta: 00:00:18
+2026-09-08 17:30:00,884 reid INFO: epoch 10 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 17:30:00,885 reid INFO: validation results - epoch: 10
+2026-09-08 17:30:10,788 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 73.0 | 92.9 | 96.5 | 262.4 | 1.0 | 2.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:30:35,664 reid INFO: epoch[11/50], iteration[100/1282], loss: 1.2085343372, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:04:27
+2026-09-08 17:30:57,996 reid INFO: epoch[11/50], iteration[200/1282], loss: 1.1857567386, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:04:03
+2026-09-08 17:31:20,352 reid INFO: epoch[11/50], iteration[300/1282], loss: 1.2939005277, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:03:40
+2026-09-08 17:31:42,703 reid INFO: epoch[11/50], iteration[400/1282], loss: 1.3754980233, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:03:17
+2026-09-08 17:32:05,062 reid INFO: epoch[11/50], iteration[500/1282], loss: 1.3599727739, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:02:55
+2026-09-08 17:32:27,459 reid INFO: epoch[11/50], iteration[600/1282], loss: 1.3510620713, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:02:32
+2026-09-08 17:32:49,841 reid INFO: epoch[11/50], iteration[700/1282], loss: 1.3395172977, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:02:10
+2026-09-08 17:33:12,225 reid INFO: epoch[11/50], iteration[800/1282], loss: 1.3239667656, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:01:47
+2026-09-08 17:33:34,613 reid INFO: epoch[11/50], iteration[900/1282], loss: 1.3631985312, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:01:25
+2026-09-08 17:33:57,011 reid INFO: epoch[11/50], iteration[1000/1282], loss: 1.3922435933, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:01:03
+2026-09-08 17:34:19,390 reid INFO: epoch[11/50], iteration[1100/1282], loss: 1.3958698937, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:00:40
+2026-09-08 17:34:41,772 reid INFO: epoch[11/50], iteration[1200/1282], loss: 1.3584627196, base lr: 9.70e-06, mem: 1657/10074MB, eta: 00:00:18
+2026-09-08 17:35:00,110 reid INFO: epoch 11 done. time: 4.8m, per batch: 0.224s, speed: 142.9 samples/s
+2026-09-08 17:35:00,110 reid INFO: validation results - epoch: 11
+2026-09-08 17:35:10,018 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 76.2 | 95.6 | 98.0 | 269.8 | 1.0 | 1.9 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:35:34,852 reid INFO: epoch[12/50], iteration[100/1282], loss: 1.4242266210, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:04:27
+2026-09-08 17:35:57,142 reid INFO: epoch[12/50], iteration[200/1282], loss: 1.1695466425, base lr: 9.57e-06, mem: 1656/10106MB, eta: 00:04:02
+2026-09-08 17:36:19,431 reid INFO: epoch[12/50], iteration[300/1282], loss: 1.0573349977, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:03:39
+2026-09-08 17:36:41,745 reid INFO: epoch[12/50], iteration[400/1282], loss: 1.1513254821, base lr: 9.57e-06, mem: 1657/10106MB, eta: 00:03:17
+2026-09-08 17:37:04,072 reid INFO: epoch[12/50], iteration[500/1282], loss: 1.1667827627, base lr: 9.57e-06, mem: 1657/10106MB, eta: 00:02:54
+2026-09-08 17:37:26,400 reid INFO: epoch[12/50], iteration[600/1282], loss: 1.2180611485, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:02:32
+2026-09-08 17:37:48,751 reid INFO: epoch[12/50], iteration[700/1282], loss: 1.1960157676, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:02:10
+2026-09-08 17:38:11,087 reid INFO: epoch[12/50], iteration[800/1282], loss: 1.1351564166, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:01:47
+2026-09-08 17:38:33,430 reid INFO: epoch[12/50], iteration[900/1282], loss: 1.1800606286, base lr: 9.57e-06, mem: 1656/10106MB, eta: 00:01:25
+2026-09-08 17:38:55,777 reid INFO: epoch[12/50], iteration[1000/1282], loss: 1.2000114655, base lr: 9.57e-06, mem: 1657/10106MB, eta: 00:01:03
+2026-09-08 17:39:18,120 reid INFO: epoch[12/50], iteration[1100/1282], loss: 1.2006941819, base lr: 9.57e-06, mem: 1658/10106MB, eta: 00:00:40
+2026-09-08 17:39:40,468 reid INFO: epoch[12/50], iteration[1200/1282], loss: 1.2240040407, base lr: 9.57e-06, mem: 1655/10106MB, eta: 00:00:18
+2026-09-08 17:39:58,735 reid INFO: epoch 12 done. time: 4.8m, per batch: 0.223s, speed: 143.2 samples/s
+2026-09-08 17:39:58,735 reid INFO: validation results - epoch: 12
+2026-09-08 17:40:08,491 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 75.0 | 93.8 | 97.1 | 265.9 | 1.0 | 2.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:40:31,327 reid INFO: epoch[13/50], iteration[100/1282], loss: 1.2058116443, base lr: 9.41e-06, mem: 1656/10106MB, eta: 00:04:28
+2026-09-08 17:40:53,615 reid INFO: epoch[13/50], iteration[200/1282], loss: 1.2297647954, base lr: 9.41e-06, mem: 1657/10106MB, eta: 00:04:03
+2026-09-08 17:41:15,912 reid INFO: epoch[13/50], iteration[300/1282], loss: 1.2457103213, base lr: 9.41e-06, mem: 1655/10106MB, eta: 00:03:40
+2026-09-08 17:41:38,225 reid INFO: epoch[13/50], iteration[400/1282], loss: 1.2465265384, base lr: 9.41e-06, mem: 1657/10106MB, eta: 00:03:17
+2026-09-08 17:42:00,569 reid INFO: epoch[13/50], iteration[500/1282], loss: 1.2151118138, base lr: 9.41e-06, mem: 1657/10106MB, eta: 00:02:55
+2026-09-08 17:42:22,979 reid INFO: epoch[13/50], iteration[600/1282], loss: 1.2457050741, base lr: 9.41e-06, mem: 1657/10106MB, eta: 00:02:32
+2026-09-08 17:42:45,365 reid INFO: epoch[13/50], iteration[700/1282], loss: 1.3006975896, base lr: 9.41e-06, mem: 1656/10106MB, eta: 00:02:10
+2026-09-08 17:43:07,744 reid INFO: epoch[13/50], iteration[800/1282], loss: 1.2871544503, base lr: 9.41e-06, mem: 1655/10106MB, eta: 00:01:47
+2026-09-08 17:43:30,130 reid INFO: epoch[13/50], iteration[900/1282], loss: 1.2791728545, base lr: 9.41e-06, mem: 1655/10106MB, eta: 00:01:25
+2026-09-08 17:43:52,498 reid INFO: epoch[13/50], iteration[1000/1282], loss: 1.2585361968, base lr: 9.41e-06, mem: 1656/10106MB, eta: 00:01:03
+2026-09-08 17:44:14,901 reid INFO: epoch[13/50], iteration[1100/1282], loss: 1.2680558572, base lr: 9.41e-06, mem: 1655/10106MB, eta: 00:00:40
+2026-09-08 17:44:37,301 reid INFO: epoch[13/50], iteration[1200/1282], loss: 1.2381013931, base lr: 9.41e-06, mem: 1657/10106MB, eta: 00:00:18
+2026-09-08 17:44:55,645 reid INFO: epoch 13 done. time: 4.8m, per batch: 0.224s, speed: 142.9 samples/s
+2026-09-08 17:44:55,646 reid INFO: validation results - epoch: 13
+2026-09-08 17:45:05,747 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 77.6 | 94.8 | 97.8 | 270.2 | 1.0 | 1.9 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:45:30,675 reid INFO: epoch[14/50], iteration[100/1282], loss: 0.9129838755, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:04:28
+2026-09-08 17:45:53,074 reid INFO: epoch[14/50], iteration[200/1282], loss: 0.9406982460, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:04:04
+2026-09-08 17:46:15,502 reid INFO: epoch[14/50], iteration[300/1282], loss: 0.9958931286, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:03:41
+2026-09-08 17:46:37,939 reid INFO: epoch[14/50], iteration[400/1282], loss: 1.0115598747, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:03:18
+2026-09-08 17:47:00,396 reid INFO: epoch[14/50], iteration[500/1282], loss: 1.0003403177, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:02:55
+2026-09-08 17:47:23,074 reid INFO: epoch[14/50], iteration[600/1282], loss: 1.0361792134, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:02:33
+2026-09-08 17:47:45,558 reid INFO: epoch[14/50], iteration[700/1282], loss: 1.0597232183, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:02:11
+2026-09-08 17:48:08,006 reid INFO: epoch[14/50], iteration[800/1282], loss: 1.0214343939, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:01:48
+2026-09-08 17:48:30,466 reid INFO: epoch[14/50], iteration[900/1282], loss: 1.0384640073, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:01:25
+2026-09-08 17:48:52,976 reid INFO: epoch[14/50], iteration[1000/1282], loss: 1.0413725834, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:01:03
+2026-09-08 17:49:15,465 reid INFO: epoch[14/50], iteration[1100/1282], loss: 1.0160068222, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:00:40
+2026-09-08 17:49:37,994 reid INFO: epoch[14/50], iteration[1200/1282], loss: 1.0522383976, base lr: 9.24e-06, mem: 1656/10106MB, eta: 00:00:18
+2026-09-08 17:49:56,404 reid INFO: epoch 14 done. time: 4.8m, per batch: 0.225s, speed: 142.2 samples/s
+2026-09-08 17:49:56,404 reid INFO: validation results - epoch: 14
+2026-09-08 17:50:06,326 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 80.3 | 96.6 | 98.7 | 275.5 | 1.0 | 1.7 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:50:31,467 reid INFO: epoch[15/50], iteration[100/1282], loss: 0.6923395863, base lr: 9.05e-06, mem: 1657/10074MB, eta: 00:04:29
+2026-09-08 17:50:53,933 reid INFO: epoch[15/50], iteration[200/1282], loss: 0.9269303005, base lr: 9.05e-06, mem: 1656/10074MB, eta: 00:04:05
+2026-09-08 17:51:16,424 reid INFO: epoch[15/50], iteration[300/1282], loss: 1.1400710830, base lr: 9.05e-06, mem: 1656/10074MB, eta: 00:03:41
+2026-09-08 17:51:39,186 reid INFO: epoch[15/50], iteration[400/1282], loss: 1.1038955113, base lr: 9.05e-06, mem: 1657/10074MB, eta: 00:03:19
+2026-09-08 17:52:01,973 reid INFO: epoch[15/50], iteration[500/1282], loss: 1.0532575914, base lr: 9.05e-06, mem: 1656/10074MB, eta: 00:02:57
+2026-09-08 17:52:24,502 reid INFO: epoch[15/50], iteration[600/1282], loss: 1.0549046143, base lr: 9.05e-06, mem: 1658/10074MB, eta: 00:02:34
+2026-09-08 17:52:46,988 reid INFO: epoch[15/50], iteration[700/1282], loss: 1.0296425164, base lr: 9.05e-06, mem: 1657/10074MB, eta: 00:02:11
+2026-09-08 17:53:09,477 reid INFO: epoch[15/50], iteration[800/1282], loss: 1.0773918201, base lr: 9.05e-06, mem: 1657/10074MB, eta: 00:01:48
+2026-09-08 17:53:31,969 reid INFO: epoch[15/50], iteration[900/1282], loss: 1.0518983978, base lr: 9.05e-06, mem: 1656/10074MB, eta: 00:01:26
+2026-09-08 17:53:54,476 reid INFO: epoch[15/50], iteration[1000/1282], loss: 1.0310185935, base lr: 9.05e-06, mem: 1658/10074MB, eta: 00:01:03
+2026-09-08 17:54:16,958 reid INFO: epoch[15/50], iteration[1100/1282], loss: 1.0221240746, base lr: 9.05e-06, mem: 1657/10074MB, eta: 00:00:41
+2026-09-08 17:54:39,463 reid INFO: epoch[15/50], iteration[1200/1282], loss: 1.0086154018, base lr: 9.05e-06, mem: 1656/10074MB, eta: 00:00:18
+2026-09-08 17:54:57,855 reid INFO: epoch 15 done. time: 4.8m, per batch: 0.226s, speed: 141.8 samples/s
+2026-09-08 17:54:57,855 reid INFO: validation results - epoch: 15
+2026-09-08 17:55:07,811 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 79.5 | 95.7 | 98.3 | 273.6 | 1.0 | 1.8 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 17:55:30,802 reid INFO: epoch[16/50], iteration[100/1282], loss: 0.9151907384, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:04:29
+2026-09-08 17:55:53,263 reid INFO: epoch[16/50], iteration[200/1282], loss: 0.8426862411, base lr: 8.83e-06, mem: 1657/10118MB, eta: 00:04:05
+2026-09-08 17:56:15,723 reid INFO: epoch[16/50], iteration[300/1282], loss: 0.8893629819, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:03:41
+2026-09-08 17:56:38,183 reid INFO: epoch[16/50], iteration[400/1282], loss: 0.8761651110, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:03:18
+2026-09-08 17:57:00,631 reid INFO: epoch[16/50], iteration[500/1282], loss: 0.9622560827, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:02:56
+2026-09-08 17:57:23,062 reid INFO: epoch[16/50], iteration[600/1282], loss: 0.9619483025, base lr: 8.83e-06, mem: 1655/10118MB, eta: 00:02:33
+2026-09-08 17:57:45,517 reid INFO: epoch[16/50], iteration[700/1282], loss: 0.9410850227, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:02:10
+2026-09-08 17:58:07,951 reid INFO: epoch[16/50], iteration[800/1282], loss: 0.9303267842, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:01:48
+2026-09-08 17:58:30,390 reid INFO: epoch[16/50], iteration[900/1282], loss: 0.9019433340, base lr: 8.83e-06, mem: 1655/10118MB, eta: 00:01:25
+2026-09-08 17:58:52,833 reid INFO: epoch[16/50], iteration[1000/1282], loss: 0.9126069555, base lr: 8.83e-06, mem: 1655/10118MB, eta: 00:01:03
+2026-09-08 17:59:15,277 reid INFO: epoch[16/50], iteration[1100/1282], loss: 0.9334820147, base lr: 8.83e-06, mem: 1655/10118MB, eta: 00:00:40
+2026-09-08 17:59:37,693 reid INFO: epoch[16/50], iteration[1200/1282], loss: 0.9585876677, base lr: 8.83e-06, mem: 1656/10118MB, eta: 00:00:18
+2026-09-08 17:59:56,020 reid INFO: epoch 16 done. time: 4.8m, per batch: 0.225s, speed: 142.4 samples/s
+2026-09-08 17:59:56,020 reid INFO: validation results - epoch: 16
+2026-09-08 18:00:05,873 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 80.6 | 96.6 | 98.9 | 276.1 | 1.0 | 1.7 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:00:30,835 reid INFO: epoch[17/50], iteration[100/1282], loss: 0.9024689879, base lr: 8.60e-06, mem: 1656/10088MB, eta: 00:04:28
+2026-09-08 18:00:53,214 reid INFO: epoch[17/50], iteration[200/1282], loss: 1.0025844276, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:04:03
+2026-09-08 18:01:15,615 reid INFO: epoch[17/50], iteration[300/1282], loss: 1.0609128487, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:03:40
+2026-09-08 18:01:37,999 reid INFO: epoch[17/50], iteration[400/1282], loss: 0.9617799664, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:03:18
+2026-09-08 18:02:00,418 reid INFO: epoch[17/50], iteration[500/1282], loss: 0.9097671119, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:02:55
+2026-09-08 18:02:22,823 reid INFO: epoch[17/50], iteration[600/1282], loss: 0.8923780918, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:02:33
+2026-09-08 18:02:45,196 reid INFO: epoch[17/50], iteration[700/1282], loss: 0.9474934213, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:02:10
+2026-09-08 18:03:07,588 reid INFO: epoch[17/50], iteration[800/1282], loss: 0.9312522591, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:01:48
+2026-09-08 18:03:29,989 reid INFO: epoch[17/50], iteration[900/1282], loss: 0.9231146009, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:01:25
+2026-09-08 18:03:52,385 reid INFO: epoch[17/50], iteration[1000/1282], loss: 0.9214276857, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:01:03
+2026-09-08 18:04:14,780 reid INFO: epoch[17/50], iteration[1100/1282], loss: 0.8982549372, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:00:40
+2026-09-08 18:04:37,182 reid INFO: epoch[17/50], iteration[1200/1282], loss: 0.8756075584, base lr: 8.60e-06, mem: 1655/10088MB, eta: 00:00:18
+2026-09-08 18:04:55,508 reid INFO: epoch 17 done. time: 4.8m, per batch: 0.224s, speed: 142.8 samples/s
+2026-09-08 18:04:55,508 reid INFO: validation results - epoch: 17
+2026-09-08 18:05:05,439 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 82.3 | 97.1 | 99.0 | 278.4 | 1.0 | 1.6 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:05:30,386 reid INFO: epoch[18/50], iteration[100/1282], loss: 0.9154523660, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:04:28
+2026-09-08 18:05:52,743 reid INFO: epoch[18/50], iteration[200/1282], loss: 0.7788988659, base lr: 8.35e-06, mem: 1656/10074MB, eta: 00:04:03
+2026-09-08 18:06:15,123 reid INFO: epoch[18/50], iteration[300/1282], loss: 0.8583007860, base lr: 8.35e-06, mem: 1656/10074MB, eta: 00:03:40
+2026-09-08 18:06:37,506 reid INFO: epoch[18/50], iteration[400/1282], loss: 0.7393399491, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:03:18
+2026-09-08 18:06:59,914 reid INFO: epoch[18/50], iteration[500/1282], loss: 0.8000299094, base lr: 8.35e-06, mem: 1656/10074MB, eta: 00:02:55
+2026-09-08 18:07:22,329 reid INFO: epoch[18/50], iteration[600/1282], loss: 0.7753447368, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:02:33
+2026-09-08 18:07:44,993 reid INFO: epoch[18/50], iteration[700/1282], loss: 0.7857317363, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:02:10
+2026-09-08 18:08:07,683 reid INFO: epoch[18/50], iteration[800/1282], loss: 0.8069936271, base lr: 8.35e-06, mem: 1656/10074MB, eta: 00:01:48
+2026-09-08 18:08:30,415 reid INFO: epoch[18/50], iteration[900/1282], loss: 0.7903645102, base lr: 8.35e-06, mem: 1656/10074MB, eta: 00:01:26
+2026-09-08 18:08:53,122 reid INFO: epoch[18/50], iteration[1000/1282], loss: 0.7853160946, base lr: 8.35e-06, mem: 1658/10074MB, eta: 00:01:03
+2026-09-08 18:09:15,872 reid INFO: epoch[18/50], iteration[1100/1282], loss: 0.7954801233, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:00:41
+2026-09-08 18:09:38,620 reid INFO: epoch[18/50], iteration[1200/1282], loss: 0.8313368163, base lr: 8.35e-06, mem: 1657/10074MB, eta: 00:00:18
+2026-09-08 18:09:57,235 reid INFO: epoch 18 done. time: 4.8m, per batch: 0.226s, speed: 141.7 samples/s
+2026-09-08 18:09:57,236 reid INFO: validation results - epoch: 18
+2026-09-08 18:10:07,293 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 83.6 | 97.7 | 99.3 | 280.6 | 1.0 | 1.5 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:10:32,148 reid INFO: epoch[19/50], iteration[100/1282], loss: 0.9540413735, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:04:29
+2026-09-08 18:10:54,613 reid INFO: epoch[19/50], iteration[200/1282], loss: 0.8438029442, base lr: 8.08e-06, mem: 1656/10066MB, eta: 00:04:04
+2026-09-08 18:11:17,041 reid INFO: epoch[19/50], iteration[300/1282], loss: 0.8171929840, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:03:41
+2026-09-08 18:11:39,488 reid INFO: epoch[19/50], iteration[400/1282], loss: 0.8808604498, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:03:18
+2026-09-08 18:12:01,912 reid INFO: epoch[19/50], iteration[500/1282], loss: 0.8398662381, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:02:56
+2026-09-08 18:12:24,369 reid INFO: epoch[19/50], iteration[600/1282], loss: 0.8413942188, base lr: 8.08e-06, mem: 1656/10066MB, eta: 00:02:33
+2026-09-08 18:12:46,834 reid INFO: epoch[19/50], iteration[700/1282], loss: 0.8773021020, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:02:10
+2026-09-08 18:13:09,271 reid INFO: epoch[19/50], iteration[800/1282], loss: 0.8659547997, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:01:48
+2026-09-08 18:13:31,720 reid INFO: epoch[19/50], iteration[900/1282], loss: 0.8455181872, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:01:25
+2026-09-08 18:13:54,149 reid INFO: epoch[19/50], iteration[1000/1282], loss: 0.8227147687, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:01:03
+2026-09-08 18:14:16,571 reid INFO: epoch[19/50], iteration[1100/1282], loss: 0.8033635670, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:00:40
+2026-09-08 18:14:39,018 reid INFO: epoch[19/50], iteration[1200/1282], loss: 0.7810437879, base lr: 8.08e-06, mem: 1655/10066MB, eta: 00:00:18
+2026-09-08 18:14:57,342 reid INFO: epoch 19 done. time: 4.8m, per batch: 0.225s, speed: 142.5 samples/s
+2026-09-08 18:14:57,342 reid INFO: validation results - epoch: 19
+2026-09-08 18:15:07,278 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 80.0 | 95.9 | 98.3 | 274.3 | 1.0 | 1.8 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:15:30,202 reid INFO: epoch[20/50], iteration[100/1282], loss: 0.7988595101, base lr: 7.80e-06, mem: 1657/10056MB, eta: 00:04:29
+2026-09-08 18:15:52,607 reid INFO: epoch[20/50], iteration[200/1282], loss: 0.8902446777, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:04:04
+2026-09-08 18:16:15,041 reid INFO: epoch[20/50], iteration[300/1282], loss: 0.8466261318, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:03:41
+2026-09-08 18:16:37,507 reid INFO: epoch[20/50], iteration[400/1282], loss: 0.8382149218, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:03:18
+2026-09-08 18:16:59,950 reid INFO: epoch[20/50], iteration[500/1282], loss: 0.8637178163, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:02:55
+2026-09-08 18:17:22,437 reid INFO: epoch[20/50], iteration[600/1282], loss: 0.8353068184, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:02:33
+2026-09-08 18:17:44,895 reid INFO: epoch[20/50], iteration[700/1282], loss: 0.7990011768, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:02:10
+2026-09-08 18:18:07,361 reid INFO: epoch[20/50], iteration[800/1282], loss: 0.7916923220, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:01:48
+2026-09-08 18:18:29,823 reid INFO: epoch[20/50], iteration[900/1282], loss: 0.7952002310, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:01:25
+2026-09-08 18:18:52,287 reid INFO: epoch[20/50], iteration[1000/1282], loss: 0.7818225111, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:01:03
+2026-09-08 18:19:14,753 reid INFO: epoch[20/50], iteration[1100/1282], loss: 0.7850614925, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:00:40
+2026-09-08 18:19:37,220 reid INFO: epoch[20/50], iteration[1200/1282], loss: 0.7743065366, base lr: 7.80e-06, mem: 1656/10056MB, eta: 00:00:18
+2026-09-08 18:19:55,577 reid INFO: epoch 20 done. time: 4.8m, per batch: 0.225s, speed: 142.4 samples/s
+2026-09-08 18:19:55,577 reid INFO: validation results - epoch: 20
+2026-09-08 18:20:05,600 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 84.4 | 98.2 | 99.5 | 282.0 | 1.0 | 1.4 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:20:30,275 reid INFO: epoch[21/50], iteration[100/1282], loss: 0.8557413357, base lr: 7.50e-06, mem: 1656/10132MB, eta: 00:04:28
+2026-09-08 18:20:52,624 reid INFO: epoch[21/50], iteration[200/1282], loss: 0.8357716965, base lr: 7.50e-06, mem: 1655/10132MB, eta: 00:04:03
+2026-09-08 18:21:15,014 reid INFO: epoch[21/50], iteration[300/1282], loss: 0.8453590840, base lr: 7.50e-06, mem: 1655/10132MB, eta: 00:03:40
+2026-09-08 18:21:37,393 reid INFO: epoch[21/50], iteration[400/1282], loss: 0.8442447112, base lr: 7.50e-06, mem: 1657/10132MB, eta: 00:03:18
+2026-09-08 18:21:59,754 reid INFO: epoch[21/50], iteration[500/1282], loss: 0.7971460024, base lr: 7.50e-06, mem: 1655/10132MB, eta: 00:02:55
+2026-09-08 18:22:22,145 reid INFO: epoch[21/50], iteration[600/1282], loss: 0.7929713245, base lr: 7.50e-06, mem: 1656/10132MB, eta: 00:02:32
+2026-09-08 18:22:44,533 reid INFO: epoch[21/50], iteration[700/1282], loss: 0.7767810600, base lr: 7.50e-06, mem: 1655/10132MB, eta: 00:02:10
+2026-09-08 18:23:06,906 reid INFO: epoch[21/50], iteration[800/1282], loss: 0.7637981122, base lr: 7.50e-06, mem: 1658/10132MB, eta: 00:01:48
+2026-09-08 18:23:29,290 reid INFO: epoch[21/50], iteration[900/1282], loss: 0.7331114307, base lr: 7.50e-06, mem: 1656/10132MB, eta: 00:01:25
+2026-09-08 18:23:51,681 reid INFO: epoch[21/50], iteration[1000/1282], loss: 0.7176008059, base lr: 7.50e-06, mem: 1657/10132MB, eta: 00:01:03
+2026-09-08 18:24:14,081 reid INFO: epoch[21/50], iteration[1100/1282], loss: 0.7152343064, base lr: 7.50e-06, mem: 1657/10132MB, eta: 00:00:40
+2026-09-08 18:24:36,484 reid INFO: epoch[21/50], iteration[1200/1282], loss: 0.7280278850, base lr: 7.50e-06, mem: 1656/10132MB, eta: 00:00:18
+2026-09-08 18:24:54,801 reid INFO: epoch 21 done. time: 4.8m, per batch: 0.224s, speed: 142.8 samples/s
+2026-09-08 18:24:54,801 reid INFO: validation results - epoch: 21
+2026-09-08 18:25:04,652 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 84.5 | 98.2 | 99.4 | 282.2 | 1.0 | 1.4 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:25:29,510 reid INFO: epoch[22/50], iteration[100/1282], loss: 0.7506710799, base lr: 7.19e-06, mem: 1655/10086MB, eta: 00:04:27
+2026-09-08 18:25:51,848 reid INFO: epoch[22/50], iteration[200/1282], loss: 0.5876382938, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:04:03
+2026-09-08 18:26:14,196 reid INFO: epoch[22/50], iteration[300/1282], loss: 0.5865905914, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:03:40
+2026-09-08 18:26:36,554 reid INFO: epoch[22/50], iteration[400/1282], loss: 0.6048992031, base lr: 7.19e-06, mem: 1656/10086MB, eta: 00:03:17
+2026-09-08 18:26:58,926 reid INFO: epoch[22/50], iteration[500/1282], loss: 0.6039214703, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:02:55
+2026-09-08 18:27:21,284 reid INFO: epoch[22/50], iteration[600/1282], loss: 0.5719110968, base lr: 7.19e-06, mem: 1656/10086MB, eta: 00:02:32
+2026-09-08 18:27:43,636 reid INFO: epoch[22/50], iteration[700/1282], loss: 0.5589726538, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:02:10
+2026-09-08 18:28:06,011 reid INFO: epoch[22/50], iteration[800/1282], loss: 0.5862450580, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:01:47
+2026-09-08 18:28:28,382 reid INFO: epoch[22/50], iteration[900/1282], loss: 0.5845520956, base lr: 7.19e-06, mem: 1656/10086MB, eta: 00:01:25
+2026-09-08 18:28:50,744 reid INFO: epoch[22/50], iteration[1000/1282], loss: 0.5994754548, base lr: 7.19e-06, mem: 1656/10086MB, eta: 00:01:03
+2026-09-08 18:29:13,147 reid INFO: epoch[22/50], iteration[1100/1282], loss: 0.6272517678, base lr: 7.19e-06, mem: 1657/10086MB, eta: 00:00:40
+2026-09-08 18:29:35,511 reid INFO: epoch[22/50], iteration[1200/1282], loss: 0.6369351654, base lr: 7.19e-06, mem: 1656/10086MB, eta: 00:00:18
+2026-09-08 18:29:53,798 reid INFO: epoch 22 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 18:29:53,799 reid INFO: validation results - epoch: 22
+2026-09-08 18:30:03,685 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 85.3 | 98.2 | 99.3 | 282.8 | 1.0 | 1.4 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:30:28,753 reid INFO: epoch[23/50], iteration[100/1282], loss: 0.6596011201, base lr: 6.87e-06, mem: 1655/10098MB, eta: 00:04:29
+2026-09-08 18:30:51,137 reid INFO: epoch[23/50], iteration[200/1282], loss: 0.6334177500, base lr: 6.87e-06, mem: 1655/10098MB, eta: 00:04:04
+2026-09-08 18:31:13,524 reid INFO: epoch[23/50], iteration[300/1282], loss: 0.5528295561, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:03:41
+2026-09-08 18:31:35,911 reid INFO: epoch[23/50], iteration[400/1282], loss: 0.5674407796, base lr: 6.87e-06, mem: 1655/10098MB, eta: 00:03:18
+2026-09-08 18:31:58,335 reid INFO: epoch[23/50], iteration[500/1282], loss: 0.5479766889, base lr: 6.87e-06, mem: 1654/10098MB, eta: 00:02:55
+2026-09-08 18:32:20,758 reid INFO: epoch[23/50], iteration[600/1282], loss: 0.5207841448, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:02:33
+2026-09-08 18:32:43,191 reid INFO: epoch[23/50], iteration[700/1282], loss: 0.5507064265, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:02:10
+2026-09-08 18:33:05,647 reid INFO: epoch[23/50], iteration[800/1282], loss: 0.5745104846, base lr: 6.87e-06, mem: 1655/10098MB, eta: 00:01:48
+2026-09-08 18:33:28,109 reid INFO: epoch[23/50], iteration[900/1282], loss: 0.5953711280, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:01:25
+2026-09-08 18:33:50,556 reid INFO: epoch[23/50], iteration[1000/1282], loss: 0.5976098279, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:01:03
+2026-09-08 18:34:13,007 reid INFO: epoch[23/50], iteration[1100/1282], loss: 0.5891757467, base lr: 6.87e-06, mem: 1656/10098MB, eta: 00:00:40
+2026-09-08 18:34:35,478 reid INFO: epoch[23/50], iteration[1200/1282], loss: 0.5820877393, base lr: 6.87e-06, mem: 1655/10098MB, eta: 00:00:18
+2026-09-08 18:34:53,857 reid INFO: epoch 23 done. time: 4.8m, per batch: 0.225s, speed: 142.5 samples/s
+2026-09-08 18:34:53,857 reid INFO: validation results - epoch: 23
+2026-09-08 18:35:03,756 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 85.2 | 98.1 | 99.3 | 282.6 | 1.0 | 1.4 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:35:26,716 reid INFO: epoch[24/50], iteration[100/1282], loss: 0.5209895377, base lr: 6.55e-06, mem: 1656/10056MB, eta: 00:04:29
+2026-09-08 18:35:49,148 reid INFO: epoch[24/50], iteration[200/1282], loss: 0.6110008004, base lr: 6.55e-06, mem: 1657/10056MB, eta: 00:04:04
+2026-09-08 18:36:11,582 reid INFO: epoch[24/50], iteration[300/1282], loss: 0.7088108184, base lr: 6.55e-06, mem: 1655/10056MB, eta: 00:03:41
+2026-09-08 18:36:34,039 reid INFO: epoch[24/50], iteration[400/1282], loss: 0.6159972454, base lr: 6.55e-06, mem: 1656/10056MB, eta: 00:03:18
+2026-09-08 18:36:56,499 reid INFO: epoch[24/50], iteration[500/1282], loss: 0.6518133363, base lr: 6.55e-06, mem: 1656/10056MB, eta: 00:02:56
+2026-09-08 18:37:18,950 reid INFO: epoch[24/50], iteration[600/1282], loss: 0.6759708337, base lr: 6.55e-06, mem: 1655/10056MB, eta: 00:02:33
+2026-09-08 18:37:41,401 reid INFO: epoch[24/50], iteration[700/1282], loss: 0.6814425696, base lr: 6.55e-06, mem: 1657/10056MB, eta: 00:02:10
+2026-09-08 18:38:03,852 reid INFO: epoch[24/50], iteration[800/1282], loss: 0.6691451485, base lr: 6.55e-06, mem: 1655/10056MB, eta: 00:01:48
+2026-09-08 18:38:26,299 reid INFO: epoch[24/50], iteration[900/1282], loss: 0.6683020404, base lr: 6.55e-06, mem: 1656/10056MB, eta: 00:01:25
+2026-09-08 18:38:48,725 reid INFO: epoch[24/50], iteration[1000/1282], loss: 0.6522982739, base lr: 6.55e-06, mem: 1656/10056MB, eta: 00:01:03
+2026-09-08 18:39:11,173 reid INFO: epoch[24/50], iteration[1100/1282], loss: 0.6340407677, base lr: 6.55e-06, mem: 1657/10056MB, eta: 00:00:40
+2026-09-08 18:39:33,609 reid INFO: epoch[24/50], iteration[1200/1282], loss: 0.6424170240, base lr: 6.55e-06, mem: 1655/10056MB, eta: 00:00:18
+2026-09-08 18:39:51,952 reid INFO: epoch 24 done. time: 4.8m, per batch: 0.225s, speed: 142.4 samples/s
+2026-09-08 18:39:51,952 reid INFO: validation results - epoch: 24
+2026-09-08 18:40:01,843 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 88.1 | 99.1 | 99.8 | 287.0 | 1.0 | 1.2 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:40:26,779 reid INFO: epoch[25/50], iteration[100/1282], loss: 1.0120670841, base lr: 6.21e-06, mem: 1655/10064MB, eta: 00:04:28
+2026-09-08 18:40:49,169 reid INFO: epoch[25/50], iteration[200/1282], loss: 0.7844156743, base lr: 6.21e-06, mem: 1657/10064MB, eta: 00:04:04
+2026-09-08 18:41:11,587 reid INFO: epoch[25/50], iteration[300/1282], loss: 0.6923423972, base lr: 6.21e-06, mem: 1656/10064MB, eta: 00:03:41
+2026-09-08 18:41:34,007 reid INFO: epoch[25/50], iteration[400/1282], loss: 0.6839836777, base lr: 6.21e-06, mem: 1657/10064MB, eta: 00:03:18
+2026-09-08 18:41:56,422 reid INFO: epoch[25/50], iteration[500/1282], loss: 0.6458569358, base lr: 6.21e-06, mem: 1656/10064MB, eta: 00:02:55
+2026-09-08 18:42:18,821 reid INFO: epoch[25/50], iteration[600/1282], loss: 0.6855393108, base lr: 6.21e-06, mem: 1655/10064MB, eta: 00:02:33
+2026-09-08 18:42:41,225 reid INFO: epoch[25/50], iteration[700/1282], loss: 0.6386890257, base lr: 6.21e-06, mem: 1655/10064MB, eta: 00:02:10
+2026-09-08 18:43:03,636 reid INFO: epoch[25/50], iteration[800/1282], loss: 0.6215763042, base lr: 6.21e-06, mem: 1656/10064MB, eta: 00:01:48
+2026-09-08 18:43:26,050 reid INFO: epoch[25/50], iteration[900/1282], loss: 0.6196713481, base lr: 6.21e-06, mem: 1655/10064MB, eta: 00:01:25
+2026-09-08 18:43:48,459 reid INFO: epoch[25/50], iteration[1000/1282], loss: 0.6170819508, base lr: 6.21e-06, mem: 1656/10064MB, eta: 00:01:03
+2026-09-08 18:44:10,867 reid INFO: epoch[25/50], iteration[1100/1282], loss: 0.6252943315, base lr: 6.21e-06, mem: 1656/10064MB, eta: 00:00:40
+2026-09-08 18:44:33,280 reid INFO: epoch[25/50], iteration[1200/1282], loss: 0.6149046755, base lr: 6.21e-06, mem: 1654/10064MB, eta: 00:00:18
+2026-09-08 18:44:51,618 reid INFO: epoch 25 done. time: 4.8m, per batch: 0.224s, speed: 142.7 samples/s
+2026-09-08 18:44:51,618 reid INFO: validation results - epoch: 25
+2026-09-08 18:45:01,543 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 85.9 | 98.7 | 99.6 | 284.2 | 1.0 | 1.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:45:24,529 reid INFO: epoch[26/50], iteration[100/1282], loss: 0.4472983838, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:04:29
+2026-09-08 18:45:46,931 reid INFO: epoch[26/50], iteration[200/1282], loss: 0.4609108007, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:04:04
+2026-09-08 18:46:09,326 reid INFO: epoch[26/50], iteration[300/1282], loss: 0.4530223336, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:03:41
+2026-09-08 18:46:31,734 reid INFO: epoch[26/50], iteration[400/1282], loss: 0.4469670011, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:03:18
+2026-09-08 18:46:54,134 reid INFO: epoch[26/50], iteration[500/1282], loss: 0.4389194253, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:02:55
+2026-09-08 18:47:16,534 reid INFO: epoch[26/50], iteration[600/1282], loss: 0.4163155181, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:02:33
+2026-09-08 18:47:38,929 reid INFO: epoch[26/50], iteration[700/1282], loss: 0.4500932085, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:02:10
+2026-09-08 18:48:01,310 reid INFO: epoch[26/50], iteration[800/1282], loss: 0.4408910524, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:01:48
+2026-09-08 18:48:23,704 reid INFO: epoch[26/50], iteration[900/1282], loss: 0.4196354601, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:01:25
+2026-09-08 18:48:46,098 reid INFO: epoch[26/50], iteration[1000/1282], loss: 0.4274000914, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:01:03
+2026-09-08 18:49:08,508 reid INFO: epoch[26/50], iteration[1100/1282], loss: 0.4717432040, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:00:40
+2026-09-08 18:49:30,901 reid INFO: epoch[26/50], iteration[1200/1282], loss: 0.4991293168, base lr: 5.87e-06, mem: 1656/10054MB, eta: 00:00:18
+2026-09-08 18:49:49,222 reid INFO: epoch 26 done. time: 4.8m, per batch: 0.224s, speed: 142.7 samples/s
+2026-09-08 18:49:49,222 reid INFO: validation results - epoch: 26
+2026-09-08 18:49:59,103 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 88.2 | 98.9 | 99.7 | 286.8 | 1.0 | 1.3 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:50:21,964 reid INFO: epoch[27/50], iteration[100/1282], loss: 0.5363382582, base lr: 5.52e-06, mem: 1656/10066MB, eta: 00:04:28
+2026-09-08 18:50:44,357 reid INFO: epoch[27/50], iteration[200/1282], loss: 0.4657557721, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:04:04
+2026-09-08 18:51:06,765 reid INFO: epoch[27/50], iteration[300/1282], loss: 0.5082314144, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:03:40
+2026-09-08 18:51:29,160 reid INFO: epoch[27/50], iteration[400/1282], loss: 0.5323829663, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:03:18
+2026-09-08 18:51:51,568 reid INFO: epoch[27/50], iteration[500/1282], loss: 0.5873048641, base lr: 5.52e-06, mem: 1657/10066MB, eta: 00:02:55
+2026-09-08 18:52:13,948 reid INFO: epoch[27/50], iteration[600/1282], loss: 0.6014212460, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:02:33
+2026-09-08 18:52:36,350 reid INFO: epoch[27/50], iteration[700/1282], loss: 0.6157234560, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:02:10
+2026-09-08 18:52:58,768 reid INFO: epoch[27/50], iteration[800/1282], loss: 0.6055950065, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:01:48
+2026-09-08 18:53:21,173 reid INFO: epoch[27/50], iteration[900/1282], loss: 0.5939945666, base lr: 5.52e-06, mem: 1656/10066MB, eta: 00:01:25
+2026-09-08 18:53:43,594 reid INFO: epoch[27/50], iteration[1000/1282], loss: 0.5909513130, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:01:03
+2026-09-08 18:54:05,997 reid INFO: epoch[27/50], iteration[1100/1282], loss: 0.5939479756, base lr: 5.52e-06, mem: 1656/10066MB, eta: 00:00:40
+2026-09-08 18:54:28,431 reid INFO: epoch[27/50], iteration[1200/1282], loss: 0.5920037635, base lr: 5.52e-06, mem: 1655/10066MB, eta: 00:00:18
+2026-09-08 18:54:46,772 reid INFO: epoch 27 done. time: 4.8m, per batch: 0.224s, speed: 142.7 samples/s
+2026-09-08 18:54:46,773 reid INFO: validation results - epoch: 27
+2026-09-08 18:54:56,728 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 90.9 | 99.4 | 99.8 | 290.1 | 1.0 | 1.2 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 18:55:21,823 reid INFO: epoch[28/50], iteration[100/1282], loss: 0.4495478875, base lr: 5.17e-06, mem: 1657/10054MB, eta: 00:04:30
+2026-09-08 18:55:44,223 reid INFO: epoch[28/50], iteration[200/1282], loss: 0.4098634164, base lr: 5.17e-06, mem: 1658/10054MB, eta: 00:04:04
+2026-09-08 18:56:06,650 reid INFO: epoch[28/50], iteration[300/1282], loss: 0.4212460787, base lr: 5.17e-06, mem: 1657/10054MB, eta: 00:03:41
+2026-09-08 18:56:29,067 reid INFO: epoch[28/50], iteration[400/1282], loss: 0.4612068693, base lr: 5.17e-06, mem: 1657/10054MB, eta: 00:03:18
+2026-09-08 18:56:51,476 reid INFO: epoch[28/50], iteration[500/1282], loss: 0.4459030776, base lr: 5.17e-06, mem: 1656/10054MB, eta: 00:02:55
+2026-09-08 18:57:13,912 reid INFO: epoch[28/50], iteration[600/1282], loss: 0.4417687004, base lr: 5.17e-06, mem: 1656/10054MB, eta: 00:02:33
+2026-09-08 18:57:36,350 reid INFO: epoch[28/50], iteration[700/1282], loss: 0.4726359481, base lr: 5.17e-06, mem: 1655/10054MB, eta: 00:02:10
+2026-09-08 18:57:58,786 reid INFO: epoch[28/50], iteration[800/1282], loss: 0.4809419780, base lr: 5.17e-06, mem: 1655/10054MB, eta: 00:01:48
+2026-09-08 18:58:21,254 reid INFO: epoch[28/50], iteration[900/1282], loss: 0.4840810009, base lr: 5.17e-06, mem: 1656/10054MB, eta: 00:01:25
+2026-09-08 18:58:43,697 reid INFO: epoch[28/50], iteration[1000/1282], loss: 0.4885155946, base lr: 5.17e-06, mem: 1655/10054MB, eta: 00:01:03
+2026-09-08 18:59:06,144 reid INFO: epoch[28/50], iteration[1100/1282], loss: 0.4811528431, base lr: 5.17e-06, mem: 1656/10054MB, eta: 00:00:40
+2026-09-08 18:59:28,591 reid INFO: epoch[28/50], iteration[1200/1282], loss: 0.4906335315, base lr: 5.17e-06, mem: 1656/10054MB, eta: 00:00:18
+2026-09-08 18:59:46,933 reid INFO: epoch 28 done. time: 4.8m, per batch: 0.225s, speed: 142.5 samples/s
+2026-09-08 18:59:46,933 reid INFO: validation results - epoch: 28
+2026-09-08 18:59:56,865 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 91.7 | 99.6 | 100.0 | 291.3 | 1.0 | 1.1 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:00:21,984 reid INFO: epoch[29/50], iteration[100/1282], loss: 0.5656367715, base lr: 4.83e-06, mem: 1655/10070MB, eta: 00:04:29
+2026-09-08 19:00:44,386 reid INFO: epoch[29/50], iteration[200/1282], loss: 0.5076223995, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:04:04
+2026-09-08 19:01:06,823 reid INFO: epoch[29/50], iteration[300/1282], loss: 0.4375361356, base lr: 4.83e-06, mem: 1657/10070MB, eta: 00:03:41
+2026-09-08 19:01:29,264 reid INFO: epoch[29/50], iteration[400/1282], loss: 0.4432231642, base lr: 4.83e-06, mem: 1655/10070MB, eta: 00:03:18
+2026-09-08 19:01:51,676 reid INFO: epoch[29/50], iteration[500/1282], loss: 0.4486381936, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:02:55
+2026-09-08 19:02:14,059 reid INFO: epoch[29/50], iteration[600/1282], loss: 0.5206926928, base lr: 4.83e-06, mem: 1655/10070MB, eta: 00:02:33
+2026-09-08 19:02:36,373 reid INFO: epoch[29/50], iteration[700/1282], loss: 0.5222011519, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:02:10
+2026-09-08 19:02:58,663 reid INFO: epoch[29/50], iteration[800/1282], loss: 0.5207115034, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:01:48
+2026-09-08 19:03:20,967 reid INFO: epoch[29/50], iteration[900/1282], loss: 0.5190002460, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:01:25
+2026-09-08 19:03:43,238 reid INFO: epoch[29/50], iteration[1000/1282], loss: 0.5322828732, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:01:03
+2026-09-08 19:04:05,500 reid INFO: epoch[29/50], iteration[1100/1282], loss: 0.5188817888, base lr: 4.83e-06, mem: 1656/10070MB, eta: 00:00:40
+2026-09-08 19:04:27,774 reid INFO: epoch[29/50], iteration[1200/1282], loss: 0.5220728807, base lr: 4.83e-06, mem: 1657/10070MB, eta: 00:00:18
+2026-09-08 19:04:45,968 reid INFO: epoch 29 done. time: 4.8m, per batch: 0.224s, speed: 143.0 samples/s
+2026-09-08 19:04:45,968 reid INFO: validation results - epoch: 29
+2026-09-08 19:04:55,884 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 93.0 | 99.7 | 100.0 | 292.6 | 1.0 | 1.1 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:05:20,717 reid INFO: epoch[30/50], iteration[100/1282], loss: 0.2803499722, base lr: 4.48e-06, mem: 1656/10084MB, eta: 00:04:28
+2026-09-08 19:05:43,063 reid INFO: epoch[30/50], iteration[200/1282], loss: 0.3199117727, base lr: 4.48e-06, mem: 1655/10084MB, eta: 00:04:03
+2026-09-08 19:06:05,379 reid INFO: epoch[30/50], iteration[300/1282], loss: 0.3247944819, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:03:40
+2026-09-08 19:06:27,718 reid INFO: epoch[30/50], iteration[400/1282], loss: 0.3546667487, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:03:17
+2026-09-08 19:06:50,048 reid INFO: epoch[30/50], iteration[500/1282], loss: 0.3709780249, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:02:55
+2026-09-08 19:07:12,402 reid INFO: epoch[30/50], iteration[600/1282], loss: 0.3937273486, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:02:32
+2026-09-08 19:07:34,733 reid INFO: epoch[30/50], iteration[700/1282], loss: 0.4135162127, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:02:10
+2026-09-08 19:07:57,084 reid INFO: epoch[30/50], iteration[800/1282], loss: 0.4389467916, base lr: 4.48e-06, mem: 1656/10084MB, eta: 00:01:47
+2026-09-08 19:08:19,410 reid INFO: epoch[30/50], iteration[900/1282], loss: 0.4766439691, base lr: 4.48e-06, mem: 1656/10084MB, eta: 00:01:25
+2026-09-08 19:08:41,705 reid INFO: epoch[30/50], iteration[1000/1282], loss: 0.4682612223, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:01:03
+2026-09-08 19:09:03,967 reid INFO: epoch[30/50], iteration[1100/1282], loss: 0.4647184671, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:00:40
+2026-09-08 19:09:26,184 reid INFO: epoch[30/50], iteration[1200/1282], loss: 0.4548989445, base lr: 4.48e-06, mem: 1657/10084MB, eta: 00:00:18
+2026-09-08 19:09:44,355 reid INFO: epoch 30 done. time: 4.8m, per batch: 0.223s, speed: 143.3 samples/s
+2026-09-08 19:09:44,356 reid INFO: validation results - epoch: 30
+2026-09-08 19:09:54,205 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 91.0 | 99.5 | 99.9 | 290.4 | 1.0 | 1.2 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 19:10:16,955 reid INFO: epoch[31/50], iteration[100/1282], loss: 0.3582367117, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:04:27
+2026-09-08 19:10:39,210 reid INFO: epoch[31/50], iteration[200/1282], loss: 0.4086420069, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:04:02
+2026-09-08 19:11:01,499 reid INFO: epoch[31/50], iteration[300/1282], loss: 0.3797490414, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:03:39
+2026-09-08 19:11:23,790 reid INFO: epoch[31/50], iteration[400/1282], loss: 0.4025843148, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:03:17
+2026-09-08 19:11:46,101 reid INFO: epoch[31/50], iteration[500/1282], loss: 0.4114821238, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:02:54
+2026-09-08 19:12:08,396 reid INFO: epoch[31/50], iteration[600/1282], loss: 0.4272286865, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:02:32
+2026-09-08 19:12:30,677 reid INFO: epoch[31/50], iteration[700/1282], loss: 0.4184046121, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:02:09
+2026-09-08 19:12:52,965 reid INFO: epoch[31/50], iteration[800/1282], loss: 0.4091787844, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:01:47
+2026-09-08 19:13:15,255 reid INFO: epoch[31/50], iteration[900/1282], loss: 0.4116022594, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:01:25
+2026-09-08 19:13:37,566 reid INFO: epoch[31/50], iteration[1000/1282], loss: 0.4057329521, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:01:02
+2026-09-08 19:13:59,879 reid INFO: epoch[31/50], iteration[1100/1282], loss: 0.3987525566, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:00:40
+2026-09-08 19:14:22,189 reid INFO: epoch[31/50], iteration[1200/1282], loss: 0.4197650916, base lr: 4.13e-06, mem: 1654/10104MB, eta: 00:00:18
+2026-09-08 19:14:40,413 reid INFO: epoch 31 done. time: 4.8m, per batch: 0.223s, speed: 143.4 samples/s
+2026-09-08 19:14:40,414 reid INFO: validation results - epoch: 31
+2026-09-08 19:14:50,375 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 93.7 | 99.9 | 100.0 | 293.5 | 1.0 | 1.1 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:15:15,267 reid INFO: epoch[32/50], iteration[100/1282], loss: 0.4428306883, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:04:28
+2026-09-08 19:15:37,723 reid INFO: epoch[32/50], iteration[200/1282], loss: 0.3387691842, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:04:04
+2026-09-08 19:16:00,229 reid INFO: epoch[32/50], iteration[300/1282], loss: 0.3050026632, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:03:41
+2026-09-08 19:16:22,749 reid INFO: epoch[32/50], iteration[400/1282], loss: 0.3037276803, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:03:18
+2026-09-08 19:16:45,260 reid INFO: epoch[32/50], iteration[500/1282], loss: 0.3353495553, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:02:56
+2026-09-08 19:17:07,749 reid INFO: epoch[32/50], iteration[600/1282], loss: 0.3767272212, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:02:33
+2026-09-08 19:17:30,215 reid INFO: epoch[32/50], iteration[700/1282], loss: 0.3636335159, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:02:11
+2026-09-08 19:17:52,693 reid INFO: epoch[32/50], iteration[800/1282], loss: 0.3778378256, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:01:48
+2026-09-08 19:18:15,164 reid INFO: epoch[32/50], iteration[900/1282], loss: 0.4188291296, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:01:26
+2026-09-08 19:18:37,639 reid INFO: epoch[32/50], iteration[1000/1282], loss: 0.4007888352, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:01:03
+2026-09-08 19:19:00,114 reid INFO: epoch[32/50], iteration[1100/1282], loss: 0.3897186455, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:00:40
+2026-09-08 19:19:22,611 reid INFO: epoch[32/50], iteration[1200/1282], loss: 0.3906380352, base lr: 3.79e-06, mem: 1656/10102MB, eta: 00:00:18
+2026-09-08 19:19:41,023 reid INFO: epoch 32 done. time: 4.8m, per batch: 0.225s, speed: 142.2 samples/s
+2026-09-08 19:19:41,023 reid INFO: validation results - epoch: 32
+2026-09-08 19:19:51,302 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 93.1 | 99.8 | 100.0 | 292.9 | 1.0 | 1.3 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:20:14,467 reid INFO: epoch[33/50], iteration[100/1282], loss: 0.3113498900, base lr: 3.45e-06, mem: 1655/10086MB, eta: 00:04:31
+2026-09-08 19:20:37,000 reid INFO: epoch[33/50], iteration[200/1282], loss: 0.3546586848, base lr: 3.45e-06, mem: 1657/10086MB, eta: 00:04:06
+2026-09-08 19:20:59,538 reid INFO: epoch[33/50], iteration[300/1282], loss: 0.3821530297, base lr: 3.45e-06, mem: 1656/10086MB, eta: 00:03:42
+2026-09-08 19:21:22,087 reid INFO: epoch[33/50], iteration[400/1282], loss: 0.3985690172, base lr: 3.45e-06, mem: 1656/10086MB, eta: 00:03:19
+2026-09-08 19:21:44,630 reid INFO: epoch[33/50], iteration[500/1282], loss: 0.3948438152, base lr: 3.45e-06, mem: 1655/10086MB, eta: 00:02:56
+2026-09-08 19:22:07,201 reid INFO: epoch[33/50], iteration[600/1282], loss: 0.3897025022, base lr: 3.45e-06, mem: 1657/10086MB, eta: 00:02:34
+2026-09-08 19:22:29,476 reid INFO: epoch[33/50], iteration[700/1282], loss: 0.3973872341, base lr: 3.45e-06, mem: 1655/10086MB, eta: 00:02:11
+2026-09-08 19:22:51,755 reid INFO: epoch[33/50], iteration[800/1282], loss: 0.4230241422, base lr: 3.45e-06, mem: 1655/10086MB, eta: 00:01:48
+2026-09-08 19:23:14,062 reid INFO: epoch[33/50], iteration[900/1282], loss: 0.4205191258, base lr: 3.45e-06, mem: 1657/10086MB, eta: 00:01:25
+2026-09-08 19:23:36,363 reid INFO: epoch[33/50], iteration[1000/1282], loss: 0.4117610440, base lr: 3.45e-06, mem: 1655/10086MB, eta: 00:01:03
+2026-09-08 19:23:58,690 reid INFO: epoch[33/50], iteration[1100/1282], loss: 0.4072875916, base lr: 3.45e-06, mem: 1656/10086MB, eta: 00:00:40
+2026-09-08 19:24:21,035 reid INFO: epoch[33/50], iteration[1200/1282], loss: 0.4265723587, base lr: 3.45e-06, mem: 1656/10086MB, eta: 00:00:18
+2026-09-08 19:24:39,308 reid INFO: epoch 33 done. time: 4.8m, per batch: 0.225s, speed: 142.5 samples/s
+2026-09-08 19:24:39,308 reid INFO: validation results - epoch: 33
+2026-09-08 19:24:49,141 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 94.0 | 99.7 | 100.0 | 293.6 | 1.0 | 1.1 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:25:13,849 reid INFO: epoch[34/50], iteration[100/1282], loss: 0.2553187838, base lr: 3.13e-06, mem: 1657/10068MB, eta: 00:04:26
+2026-09-08 19:25:36,029 reid INFO: epoch[34/50], iteration[200/1282], loss: 0.3144959654, base lr: 3.13e-06, mem: 1655/10068MB, eta: 00:04:01
+2026-09-08 19:25:58,227 reid INFO: epoch[34/50], iteration[300/1282], loss: 0.3540988499, base lr: 3.13e-06, mem: 1657/10068MB, eta: 00:03:38
+2026-09-08 19:26:20,451 reid INFO: epoch[34/50], iteration[400/1282], loss: 0.3779645595, base lr: 3.13e-06, mem: 1656/10068MB, eta: 00:03:16
+2026-09-08 19:26:42,668 reid INFO: epoch[34/50], iteration[500/1282], loss: 0.3480381980, base lr: 3.13e-06, mem: 1655/10068MB, eta: 00:02:54
+2026-09-08 19:27:04,874 reid INFO: epoch[34/50], iteration[600/1282], loss: 0.3435373147, base lr: 3.13e-06, mem: 1656/10068MB, eta: 00:02:31
+2026-09-08 19:27:27,074 reid INFO: epoch[34/50], iteration[700/1282], loss: 0.3698307260, base lr: 3.13e-06, mem: 1656/10068MB, eta: 00:02:09
+2026-09-08 19:27:49,289 reid INFO: epoch[34/50], iteration[800/1282], loss: 0.3646150699, base lr: 3.13e-06, mem: 1655/10068MB, eta: 00:01:47
+2026-09-08 19:28:11,491 reid INFO: epoch[34/50], iteration[900/1282], loss: 0.3679293355, base lr: 3.13e-06, mem: 1656/10068MB, eta: 00:01:24
+2026-09-08 19:28:33,711 reid INFO: epoch[34/50], iteration[1000/1282], loss: 0.3716841508, base lr: 3.13e-06, mem: 1655/10068MB, eta: 00:01:02
+2026-09-08 19:28:55,946 reid INFO: epoch[34/50], iteration[1100/1282], loss: 0.3773448577, base lr: 3.13e-06, mem: 1656/10068MB, eta: 00:00:40
+2026-09-08 19:29:18,187 reid INFO: epoch[34/50], iteration[1200/1282], loss: 0.3837517750, base lr: 3.13e-06, mem: 1655/10068MB, eta: 00:00:18
+2026-09-08 19:29:36,396 reid INFO: epoch 34 done. time: 4.8m, per batch: 0.222s, speed: 143.9 samples/s
+2026-09-08 19:29:36,397 reid INFO: validation results - epoch: 34
+2026-09-08 19:29:46,233 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 94.7 | 99.8 | 99.9 | 294.4 | 1.0 | 1.1 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 19:30:10,889 reid INFO: epoch[35/50], iteration[100/1282], loss: 0.3785067554, base lr: 2.81e-06, mem: 1656/10084MB, eta: 00:04:25
+2026-09-08 19:30:33,029 reid INFO: epoch[35/50], iteration[200/1282], loss: 0.4699404468, base lr: 2.81e-06, mem: 1657/10084MB, eta: 00:04:01
+2026-09-08 19:30:55,201 reid INFO: epoch[35/50], iteration[300/1282], loss: 0.4203803989, base lr: 2.81e-06, mem: 1656/10084MB, eta: 00:03:38
+2026-09-08 19:31:17,361 reid INFO: epoch[35/50], iteration[400/1282], loss: 0.4139746576, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:03:16
+2026-09-08 19:31:39,532 reid INFO: epoch[35/50], iteration[500/1282], loss: 0.3814311773, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:02:53
+2026-09-08 19:32:01,685 reid INFO: epoch[35/50], iteration[600/1282], loss: 0.4049687544, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:02:31
+2026-09-08 19:32:23,846 reid INFO: epoch[35/50], iteration[700/1282], loss: 0.4020273847, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:02:09
+2026-09-08 19:32:46,044 reid INFO: epoch[35/50], iteration[800/1282], loss: 0.3940355766, base lr: 2.81e-06, mem: 1656/10084MB, eta: 00:01:47
+2026-09-08 19:33:08,219 reid INFO: epoch[35/50], iteration[900/1282], loss: 0.3926569664, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:01:24
+2026-09-08 19:33:30,384 reid INFO: epoch[35/50], iteration[1000/1282], loss: 0.3869025714, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:01:02
+2026-09-08 19:33:52,544 reid INFO: epoch[35/50], iteration[1100/1282], loss: 0.3921969819, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:00:40
+2026-09-08 19:34:14,706 reid INFO: epoch[35/50], iteration[1200/1282], loss: 0.3950551746, base lr: 2.81e-06, mem: 1655/10084MB, eta: 00:00:18
+2026-09-08 19:34:32,816 reid INFO: epoch 35 done. time: 4.7m, per batch: 0.222s, speed: 144.2 samples/s
+2026-09-08 19:34:32,816 reid INFO: validation results - epoch: 35
+2026-09-08 19:34:42,666 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 94.9 | 99.8 | 100.0 | 294.7 | 1.0 | 1.1 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:35:07,322 reid INFO: epoch[36/50], iteration[100/1282], loss: 0.1582867776, base lr: 2.50e-06, mem: 1657/10102MB, eta: 00:04:25
+2026-09-08 19:35:29,491 reid INFO: epoch[36/50], iteration[200/1282], loss: 0.2397532827, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:04:01
+2026-09-08 19:35:51,695 reid INFO: epoch[36/50], iteration[300/1282], loss: 0.2094950198, base lr: 2.50e-06, mem: 1657/10102MB, eta: 00:03:38
+2026-09-08 19:36:13,836 reid INFO: epoch[36/50], iteration[400/1282], loss: 0.2139782636, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:03:16
+2026-09-08 19:36:35,987 reid INFO: epoch[36/50], iteration[500/1282], loss: 0.2170957327, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:02:53
+2026-09-08 19:36:58,157 reid INFO: epoch[36/50], iteration[600/1282], loss: 0.2203673957, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:02:31
+2026-09-08 19:37:20,317 reid INFO: epoch[36/50], iteration[700/1282], loss: 0.2350486544, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:02:09
+2026-09-08 19:37:42,502 reid INFO: epoch[36/50], iteration[800/1282], loss: 0.2644635853, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:01:47
+2026-09-08 19:38:04,708 reid INFO: epoch[36/50], iteration[900/1282], loss: 0.2956563283, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:01:24
+2026-09-08 19:38:26,913 reid INFO: epoch[36/50], iteration[1000/1282], loss: 0.3044721670, base lr: 2.50e-06, mem: 1655/10102MB, eta: 00:01:02
+2026-09-08 19:38:49,115 reid INFO: epoch[36/50], iteration[1100/1282], loss: 0.3218080974, base lr: 2.50e-06, mem: 1656/10102MB, eta: 00:00:40
+2026-09-08 19:39:11,325 reid INFO: epoch[36/50], iteration[1200/1282], loss: 0.3271926744, base lr: 2.50e-06, mem: 1657/10102MB, eta: 00:00:18
+2026-09-08 19:39:29,480 reid INFO: epoch 36 done. time: 4.7m, per batch: 0.222s, speed: 144.1 samples/s
+2026-09-08 19:39:29,480 reid INFO: validation results - epoch: 36
+2026-09-08 19:39:39,387 reid INFO: 
++------+------+------+------+-------+-----+-----+
+| item |  R1  |  R5  | R10  |  RSum | MdR | MnR |
++------+------+------+------+-------+-----+-----+
+| sims | 95.0 | 99.8 | 99.9 | 294.7 | 1.0 | 1.1 |
++------+------+------+------+-------+-----+-----+
+2026-09-08 19:40:04,078 reid INFO: epoch[37/50], iteration[100/1282], loss: 0.3275399063, base lr: 2.20e-06, mem: 1656/10068MB, eta: 00:04:26
+2026-09-08 19:40:26,232 reid INFO: epoch[37/50], iteration[200/1282], loss: 0.3790563601, base lr: 2.20e-06, mem: 1656/10068MB, eta: 00:04:01
+2026-09-08 19:40:48,387 reid INFO: epoch[37/50], iteration[300/1282], loss: 0.3560538778, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:03:38
+2026-09-08 19:41:10,544 reid INFO: epoch[37/50], iteration[400/1282], loss: 0.3504537028, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:03:16
+2026-09-08 19:41:32,707 reid INFO: epoch[37/50], iteration[500/1282], loss: 0.3381262392, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:02:53
+2026-09-08 19:41:54,874 reid INFO: epoch[37/50], iteration[600/1282], loss: 0.3226651989, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:02:31
+2026-09-08 19:42:17,046 reid INFO: epoch[37/50], iteration[700/1282], loss: 0.3138162968, base lr: 2.20e-06, mem: 1656/10068MB, eta: 00:02:09
+2026-09-08 19:42:39,223 reid INFO: epoch[37/50], iteration[800/1282], loss: 0.3092889568, base lr: 2.20e-06, mem: 1656/10068MB, eta: 00:01:47
+2026-09-08 19:43:01,454 reid INFO: epoch[37/50], iteration[900/1282], loss: 0.3116574076, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:01:24
+2026-09-08 19:43:23,668 reid INFO: epoch[37/50], iteration[1000/1282], loss: 0.2974372803, base lr: 2.20e-06, mem: 1656/10068MB, eta: 00:01:02
+2026-09-08 19:43:45,879 reid INFO: epoch[37/50], iteration[1100/1282], loss: 0.2888911847, base lr: 2.20e-06, mem: 1655/10068MB, eta: 00:00:40
+2026-09-08 19:44:08,094 reid INFO: epoch[37/50], iteration[1200/1282], loss: 0.2990073409, base lr: 2.20e-06, mem: 1657/10068MB, eta: 00:00:18
+2026-09-08 19:44:26,244 reid INFO: epoch 37 done. time: 4.7m, per batch: 0.222s, speed: 144.1 samples/s
+2026-09-08 19:44:26,244 reid INFO: validation results - epoch: 37
+2026-09-08 19:44:36,169 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 96.5 | 100.0 | 100.0 | 296.5 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 19:45:00,922 reid INFO: epoch[38/50], iteration[100/1282], loss: 0.3604942062, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:04:26
+2026-09-08 19:45:23,079 reid INFO: epoch[38/50], iteration[200/1282], loss: 0.3716648691, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:04:01
+2026-09-08 19:45:45,262 reid INFO: epoch[38/50], iteration[300/1282], loss: 0.4125397981, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:03:39
+2026-09-08 19:46:07,435 reid INFO: epoch[38/50], iteration[400/1282], loss: 0.3692960338, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:03:16
+2026-09-08 19:46:29,598 reid INFO: epoch[38/50], iteration[500/1282], loss: 0.3819079867, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:02:53
+2026-09-08 19:46:51,822 reid INFO: epoch[38/50], iteration[600/1282], loss: 0.3956877013, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:02:31
+2026-09-08 19:47:14,016 reid INFO: epoch[38/50], iteration[700/1282], loss: 0.4056483950, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:02:09
+2026-09-08 19:47:36,207 reid INFO: epoch[38/50], iteration[800/1282], loss: 0.3933566707, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:01:47
+2026-09-08 19:47:58,416 reid INFO: epoch[38/50], iteration[900/1282], loss: 0.3725249928, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:01:24
+2026-09-08 19:48:20,618 reid INFO: epoch[38/50], iteration[1000/1282], loss: 0.3606687851, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:01:02
+2026-09-08 19:48:42,800 reid INFO: epoch[38/50], iteration[1100/1282], loss: 0.3570881756, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:00:40
+2026-09-08 19:49:04,979 reid INFO: epoch[38/50], iteration[1200/1282], loss: 0.3353244453, base lr: 1.92e-06, mem: 1655/10058MB, eta: 00:00:18
+2026-09-08 19:49:23,115 reid INFO: epoch 38 done. time: 4.7m, per batch: 0.222s, speed: 144.1 samples/s
+2026-09-08 19:49:23,115 reid INFO: validation results - epoch: 38
+2026-09-08 19:49:32,958 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 96.9 | 99.9 | 100.0 | 296.8 | 1.0 | 1.0 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:49:57,636 reid INFO: epoch[39/50], iteration[100/1282], loss: 0.4207161103, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:04:26
+2026-09-08 19:50:19,837 reid INFO: epoch[39/50], iteration[200/1282], loss: 0.4117750325, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:04:01
+2026-09-08 19:50:42,058 reid INFO: epoch[39/50], iteration[300/1282], loss: 0.4576102840, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:03:39
+2026-09-08 19:51:04,309 reid INFO: epoch[39/50], iteration[400/1282], loss: 0.3855304071, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:03:16
+2026-09-08 19:51:26,520 reid INFO: epoch[39/50], iteration[500/1282], loss: 0.4061392397, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:02:54
+2026-09-08 19:51:48,733 reid INFO: epoch[39/50], iteration[600/1282], loss: 0.4103148098, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:02:31
+2026-09-08 19:52:10,964 reid INFO: epoch[39/50], iteration[700/1282], loss: 0.3878873472, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:02:09
+2026-09-08 19:52:33,190 reid INFO: epoch[39/50], iteration[800/1282], loss: 0.3983593015, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:01:47
+2026-09-08 19:52:55,402 reid INFO: epoch[39/50], iteration[900/1282], loss: 0.3718810207, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:01:25
+2026-09-08 19:53:17,598 reid INFO: epoch[39/50], iteration[1000/1282], loss: 0.3814361734, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:01:02
+2026-09-08 19:53:39,787 reid INFO: epoch[39/50], iteration[1100/1282], loss: 0.3963086553, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:00:40
+2026-09-08 19:54:01,975 reid INFO: epoch[39/50], iteration[1200/1282], loss: 0.3889023924, base lr: 1.65e-06, mem: 1656/10090MB, eta: 00:00:18
+2026-09-08 19:54:20,126 reid INFO: epoch 39 done. time: 4.8m, per batch: 0.222s, speed: 143.9 samples/s
+2026-09-08 19:54:20,126 reid INFO: validation results - epoch: 39
+2026-09-08 19:54:29,950 reid INFO: 
++------+------+------+-------+-------+-----+-----+
+| item |  R1  |  R5  |  R10  |  RSum | MdR | MnR |
++------+------+------+-------+-------+-----+-----+
+| sims | 97.4 | 99.9 | 100.0 | 297.3 | 1.0 | 1.0 |
++------+------+------+-------+-------+-----+-----+
+2026-09-08 19:54:54,697 reid INFO: epoch[40/50], iteration[100/1282], loss: 0.2463793773, base lr: 1.40e-06, mem: 1654/10104MB, eta: 00:04:27
+2026-09-08 19:55:16,839 reid INFO: epoch[40/50], iteration[200/1282], loss: 0.2756844430, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:04:02
+2026-09-08 19:55:38,999 reid INFO: epoch[40/50], iteration[300/1282], loss: 0.2210377021, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:03:38
+2026-09-08 19:56:01,169 reid INFO: epoch[40/50], iteration[400/1282], loss: 0.2328323631, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:03:16
+2026-09-08 19:56:23,348 reid INFO: epoch[40/50], iteration[500/1282], loss: 0.2730443284, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:02:53
+2026-09-08 19:56:45,559 reid INFO: epoch[40/50], iteration[600/1282], loss: 0.2690190026, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:02:31
+2026-09-08 19:57:07,782 reid INFO: epoch[40/50], iteration[700/1282], loss: 0.2902820127, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:02:09
+2026-09-08 19:57:30,021 reid INFO: epoch[40/50], iteration[800/1282], loss: 0.3003319048, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:01:47
+2026-09-08 19:57:52,247 reid INFO: epoch[40/50], iteration[900/1282], loss: 0.2978763499, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:01:24
+2026-09-08 19:58:14,446 reid INFO: epoch[40/50], iteration[1000/1282], loss: 0.2990255119, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:01:02
+2026-09-08 19:58:36,673 reid INFO: epoch[40/50], iteration[1100/1282], loss: 0.2974764490, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:00:40
+2026-09-08 19:58:58,896 reid INFO: epoch[40/50], iteration[1200/1282], loss: 0.2928664072, base lr: 1.40e-06, mem: 1656/10104MB, eta: 00:00:18
+2026-09-08 19:59:17,053 reid INFO: epoch 40 done. time: 4.7m, per batch: 0.222s, speed: 144.0 samples/s
+2026-09-08 19:59:17,053 reid INFO: validation results - epoch: 40
+2026-09-08 19:59:26,922 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 97.0 | 100.0 | 100.0 | 297.0 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 19:59:49,644 reid INFO: epoch[41/50], iteration[100/1282], loss: 0.1979440589, base lr: 1.17e-06, mem: 1656/10088MB, eta: 00:04:26
+2026-09-08 20:00:11,836 reid INFO: epoch[41/50], iteration[200/1282], loss: 0.2639649226, base lr: 1.17e-06, mem: 1655/10088MB, eta: 00:04:02
+2026-09-08 20:00:34,092 reid INFO: epoch[41/50], iteration[300/1282], loss: 0.2699588846, base lr: 1.17e-06, mem: 1656/10088MB, eta: 00:03:39
+2026-09-08 20:00:56,342 reid INFO: epoch[41/50], iteration[400/1282], loss: 0.3097390429, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:03:16
+2026-09-08 20:01:18,588 reid INFO: epoch[41/50], iteration[500/1282], loss: 0.3233264866, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:02:54
+2026-09-08 20:01:40,834 reid INFO: epoch[41/50], iteration[600/1282], loss: 0.3060909252, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:02:32
+2026-09-08 20:02:03,090 reid INFO: epoch[41/50], iteration[700/1282], loss: 0.2943981199, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:02:09
+2026-09-08 20:02:25,364 reid INFO: epoch[41/50], iteration[800/1282], loss: 0.2836962049, base lr: 1.17e-06, mem: 1655/10088MB, eta: 00:01:47
+2026-09-08 20:02:47,647 reid INFO: epoch[41/50], iteration[900/1282], loss: 0.2896038915, base lr: 1.17e-06, mem: 1655/10088MB, eta: 00:01:25
+2026-09-08 20:03:09,906 reid INFO: epoch[41/50], iteration[1000/1282], loss: 0.3065161174, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:01:02
+2026-09-08 20:03:32,185 reid INFO: epoch[41/50], iteration[1100/1282], loss: 0.2923207620, base lr: 1.17e-06, mem: 1654/10088MB, eta: 00:00:40
+2026-09-08 20:03:54,467 reid INFO: epoch[41/50], iteration[1200/1282], loss: 0.2908754172, base lr: 1.17e-06, mem: 1655/10088MB, eta: 00:00:18
+2026-09-08 20:04:12,672 reid INFO: epoch 41 done. time: 4.8m, per batch: 0.223s, speed: 143.6 samples/s
+2026-09-08 20:04:12,673 reid INFO: validation results - epoch: 41
+2026-09-08 20:04:22,525 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 97.4 | 100.0 | 100.0 | 297.4 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:04:47,419 reid INFO: epoch[42/50], iteration[100/1282], loss: 0.2404672125, base lr: 9.55e-07, mem: 1654/10058MB, eta: 00:04:28
+2026-09-08 20:05:09,692 reid INFO: epoch[42/50], iteration[200/1282], loss: 0.2940072362, base lr: 9.55e-07, mem: 1656/10058MB, eta: 00:04:03
+2026-09-08 20:05:31,971 reid INFO: epoch[42/50], iteration[300/1282], loss: 0.2551839481, base lr: 9.55e-07, mem: 1657/10058MB, eta: 00:03:40
+2026-09-08 20:05:54,273 reid INFO: epoch[42/50], iteration[400/1282], loss: 0.2438518546, base lr: 9.55e-07, mem: 1657/10058MB, eta: 00:03:17
+2026-09-08 20:06:16,553 reid INFO: epoch[42/50], iteration[500/1282], loss: 0.2493447702, base lr: 9.55e-07, mem: 1655/10058MB, eta: 00:02:54
+2026-09-08 20:06:38,818 reid INFO: epoch[42/50], iteration[600/1282], loss: 0.2440160064, base lr: 9.55e-07, mem: 1656/10058MB, eta: 00:02:32
+2026-09-08 20:07:01,072 reid INFO: epoch[42/50], iteration[700/1282], loss: 0.2543920982, base lr: 9.55e-07, mem: 1656/10058MB, eta: 00:02:09
+2026-09-08 20:07:23,326 reid INFO: epoch[42/50], iteration[800/1282], loss: 0.2714197131, base lr: 9.55e-07, mem: 1657/10058MB, eta: 00:01:47
+2026-09-08 20:07:45,617 reid INFO: epoch[42/50], iteration[900/1282], loss: 0.2635165960, base lr: 9.55e-07, mem: 1656/10058MB, eta: 00:01:25
+2026-09-08 20:08:07,888 reid INFO: epoch[42/50], iteration[1000/1282], loss: 0.2651443426, base lr: 9.55e-07, mem: 1657/10058MB, eta: 00:01:02
+2026-09-08 20:08:30,157 reid INFO: epoch[42/50], iteration[1100/1282], loss: 0.2602260960, base lr: 9.55e-07, mem: 1657/10058MB, eta: 00:00:40
+2026-09-08 20:08:52,402 reid INFO: epoch[42/50], iteration[1200/1282], loss: 0.2681894633, base lr: 9.55e-07, mem: 1655/10058MB, eta: 00:00:18
+2026-09-08 20:09:10,600 reid INFO: epoch 42 done. time: 4.8m, per batch: 0.223s, speed: 143.5 samples/s
+2026-09-08 20:09:10,600 reid INFO: validation results - epoch: 42
+2026-09-08 20:09:20,382 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 97.7 | 100.0 | 100.0 | 297.7 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:09:45,097 reid INFO: epoch[43/50], iteration[100/1282], loss: 0.3204035872, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:04:26
+2026-09-08 20:10:07,312 reid INFO: epoch[43/50], iteration[200/1282], loss: 0.2814377148, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:04:02
+2026-09-08 20:10:29,538 reid INFO: epoch[43/50], iteration[300/1282], loss: 0.2909114462, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:03:39
+2026-09-08 20:10:51,766 reid INFO: epoch[43/50], iteration[400/1282], loss: 0.2848628471, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:03:16
+2026-09-08 20:11:13,994 reid INFO: epoch[43/50], iteration[500/1282], loss: 0.2715753714, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:02:54
+2026-09-08 20:11:36,233 reid INFO: epoch[43/50], iteration[600/1282], loss: 0.2719686541, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:02:31
+2026-09-08 20:11:58,478 reid INFO: epoch[43/50], iteration[700/1282], loss: 0.2813170982, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:02:09
+2026-09-08 20:12:20,727 reid INFO: epoch[43/50], iteration[800/1282], loss: 0.2872780319, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:01:47
+2026-09-08 20:12:42,974 reid INFO: epoch[43/50], iteration[900/1282], loss: 0.2677741760, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:01:25
+2026-09-08 20:13:05,207 reid INFO: epoch[43/50], iteration[1000/1282], loss: 0.2658784733, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:01:02
+2026-09-08 20:13:27,444 reid INFO: epoch[43/50], iteration[1100/1282], loss: 0.2723910482, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:00:40
+2026-09-08 20:13:49,650 reid INFO: epoch[43/50], iteration[1200/1282], loss: 0.2675719095, base lr: 7.60e-07, mem: 1654/10098MB, eta: 00:00:18
+2026-09-08 20:14:07,801 reid INFO: epoch 43 done. time: 4.8m, per batch: 0.223s, speed: 143.8 samples/s
+2026-09-08 20:14:07,801 reid INFO: validation results - epoch: 43
+2026-09-08 20:14:17,745 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.0 | 100.0 | 100.0 | 298.0 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:14:42,572 reid INFO: epoch[44/50], iteration[100/1282], loss: 0.3311871023, base lr: 5.85e-07, mem: 1654/10058MB, eta: 00:04:27
+2026-09-08 20:15:04,830 reid INFO: epoch[44/50], iteration[200/1282], loss: 0.3262609988, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:04:02
+2026-09-08 20:15:27,085 reid INFO: epoch[44/50], iteration[300/1282], loss: 0.3149992495, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:03:39
+2026-09-08 20:15:49,347 reid INFO: epoch[44/50], iteration[400/1282], loss: 0.2992045480, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:03:17
+2026-09-08 20:16:11,615 reid INFO: epoch[44/50], iteration[500/1282], loss: 0.2865278412, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:02:54
+2026-09-08 20:16:33,868 reid INFO: epoch[44/50], iteration[600/1282], loss: 0.2925759447, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:02:32
+2026-09-08 20:16:56,117 reid INFO: epoch[44/50], iteration[700/1282], loss: 0.2872088404, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:02:09
+2026-09-08 20:17:18,361 reid INFO: epoch[44/50], iteration[800/1282], loss: 0.2706173985, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:01:47
+2026-09-08 20:17:40,611 reid INFO: epoch[44/50], iteration[900/1282], loss: 0.2759018524, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:01:25
+2026-09-08 20:18:02,862 reid INFO: epoch[44/50], iteration[1000/1282], loss: 0.2720215028, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:01:02
+2026-09-08 20:18:25,093 reid INFO: epoch[44/50], iteration[1100/1282], loss: 0.2673736916, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:00:40
+2026-09-08 20:18:47,314 reid INFO: epoch[44/50], iteration[1200/1282], loss: 0.2699643487, base lr: 5.85e-07, mem: 1655/10058MB, eta: 00:00:18
+2026-09-08 20:19:05,492 reid INFO: epoch 44 done. time: 4.8m, per batch: 0.223s, speed: 143.7 samples/s
+2026-09-08 20:19:05,493 reid INFO: validation results - epoch: 44
+2026-09-08 20:19:15,317 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.2 | 100.0 | 100.0 | 298.2 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:19:40,079 reid INFO: epoch[45/50], iteration[100/1282], loss: 0.2470505743, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:04:26
+2026-09-08 20:20:02,283 reid INFO: epoch[45/50], iteration[200/1282], loss: 0.3133219231, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:04:02
+2026-09-08 20:20:24,495 reid INFO: epoch[45/50], iteration[300/1282], loss: 0.2774546580, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:03:39
+2026-09-08 20:20:46,674 reid INFO: epoch[45/50], iteration[400/1282], loss: 0.2649610085, base lr: 4.32e-07, mem: 1657/10090MB, eta: 00:03:16
+2026-09-08 20:21:08,845 reid INFO: epoch[45/50], iteration[500/1282], loss: 0.2620605477, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:02:54
+2026-09-08 20:21:31,021 reid INFO: epoch[45/50], iteration[600/1282], loss: 0.2581159198, base lr: 4.32e-07, mem: 1656/10090MB, eta: 00:02:31
+2026-09-08 20:21:53,195 reid INFO: epoch[45/50], iteration[700/1282], loss: 0.2542921868, base lr: 4.32e-07, mem: 1656/10090MB, eta: 00:02:09
+2026-09-08 20:22:15,402 reid INFO: epoch[45/50], iteration[800/1282], loss: 0.2521129144, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:01:47
+2026-09-08 20:22:37,602 reid INFO: epoch[45/50], iteration[900/1282], loss: 0.2478051549, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:01:24
+2026-09-08 20:22:59,798 reid INFO: epoch[45/50], iteration[1000/1282], loss: 0.2743044550, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:01:02
+2026-09-08 20:23:21,990 reid INFO: epoch[45/50], iteration[1100/1282], loss: 0.2754011497, base lr: 4.32e-07, mem: 1654/10090MB, eta: 00:00:40
+2026-09-08 20:23:44,220 reid INFO: epoch[45/50], iteration[1200/1282], loss: 0.2838701426, base lr: 4.32e-07, mem: 1655/10090MB, eta: 00:00:18
+2026-09-08 20:24:02,338 reid INFO: epoch 45 done. time: 4.7m, per batch: 0.222s, speed: 144.0 samples/s
+2026-09-08 20:24:02,338 reid INFO: validation results - epoch: 45
+2026-09-08 20:24:12,370 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.3 | 100.0 | 100.0 | 298.3 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:24:37,068 reid INFO: epoch[46/50], iteration[100/1282], loss: 0.1477310013, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:04:26
+2026-09-08 20:24:59,239 reid INFO: epoch[46/50], iteration[200/1282], loss: 0.2350277168, base lr: 3.02e-07, mem: 1654/10120MB, eta: 00:04:01
+2026-09-08 20:25:21,417 reid INFO: epoch[46/50], iteration[300/1282], loss: 0.2239823315, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:03:38
+2026-09-08 20:25:43,588 reid INFO: epoch[46/50], iteration[400/1282], loss: 0.2056486067, base lr: 3.02e-07, mem: 1657/10120MB, eta: 00:03:16
+2026-09-08 20:26:05,757 reid INFO: epoch[46/50], iteration[500/1282], loss: 0.2165555026, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:02:53
+2026-09-08 20:26:27,918 reid INFO: epoch[46/50], iteration[600/1282], loss: 0.2213318628, base lr: 3.02e-07, mem: 1654/10120MB, eta: 00:02:31
+2026-09-08 20:26:50,090 reid INFO: epoch[46/50], iteration[700/1282], loss: 0.2425149826, base lr: 3.02e-07, mem: 1654/10120MB, eta: 00:02:09
+2026-09-08 20:27:12,287 reid INFO: epoch[46/50], iteration[800/1282], loss: 0.2465995573, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:01:47
+2026-09-08 20:27:34,479 reid INFO: epoch[46/50], iteration[900/1282], loss: 0.2641217079, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:01:24
+2026-09-08 20:27:56,679 reid INFO: epoch[46/50], iteration[1000/1282], loss: 0.2767685119, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:01:02
+2026-09-08 20:28:18,878 reid INFO: epoch[46/50], iteration[1100/1282], loss: 0.2846326752, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:00:40
+2026-09-08 20:28:41,063 reid INFO: epoch[46/50], iteration[1200/1282], loss: 0.2842021797, base lr: 3.02e-07, mem: 1655/10120MB, eta: 00:00:18
+2026-09-08 20:28:59,205 reid INFO: epoch 46 done. time: 4.7m, per batch: 0.222s, speed: 144.1 samples/s
+2026-09-08 20:28:59,205 reid INFO: validation results - epoch: 46
+2026-09-08 20:29:09,143 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.2 | 100.0 | 100.0 | 298.2 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:29:31,881 reid INFO: epoch[47/50], iteration[100/1282], loss: 0.2813602900, base lr: 1.94e-07, mem: 1655/10058MB, eta: 00:04:26
+2026-09-08 20:29:54,087 reid INFO: epoch[47/50], iteration[200/1282], loss: 0.2489169032, base lr: 1.94e-07, mem: 1657/10058MB, eta: 00:04:02
+2026-09-08 20:30:16,331 reid INFO: epoch[47/50], iteration[300/1282], loss: 0.2324551257, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:03:39
+2026-09-08 20:30:38,594 reid INFO: epoch[47/50], iteration[400/1282], loss: 0.2147217140, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:03:16
+2026-09-08 20:31:00,865 reid INFO: epoch[47/50], iteration[500/1282], loss: 0.2409433262, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:02:54
+2026-09-08 20:31:23,117 reid INFO: epoch[47/50], iteration[600/1282], loss: 0.2576111043, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:02:32
+2026-09-08 20:31:45,382 reid INFO: epoch[47/50], iteration[700/1282], loss: 0.2622000474, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:02:09
+2026-09-08 20:32:07,692 reid INFO: epoch[47/50], iteration[800/1282], loss: 0.2644979690, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:01:47
+2026-09-08 20:32:29,979 reid INFO: epoch[47/50], iteration[900/1282], loss: 0.2685804528, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:01:25
+2026-09-08 20:32:52,263 reid INFO: epoch[47/50], iteration[1000/1282], loss: 0.2844925794, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:01:02
+2026-09-08 20:33:14,587 reid INFO: epoch[47/50], iteration[1100/1282], loss: 0.2780619706, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:00:40
+2026-09-08 20:33:36,921 reid INFO: epoch[47/50], iteration[1200/1282], loss: 0.2738200397, base lr: 1.94e-07, mem: 1656/10058MB, eta: 00:00:18
+2026-09-08 20:33:55,174 reid INFO: epoch 47 done. time: 4.8m, per batch: 0.223s, speed: 143.5 samples/s
+2026-09-08 20:33:55,174 reid INFO: validation results - epoch: 47
+2026-09-08 20:34:04,972 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.3 | 100.0 | 100.0 | 298.3 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:34:27,670 reid INFO: epoch[48/50], iteration[100/1282], loss: 0.1999469929, base lr: 1.09e-07, mem: 1656/10084MB, eta: 00:04:26
+2026-09-08 20:34:49,862 reid INFO: epoch[48/50], iteration[200/1282], loss: 0.2459699112, base lr: 1.09e-07, mem: 1655/10084MB, eta: 00:04:02
+2026-09-08 20:35:12,033 reid INFO: epoch[48/50], iteration[300/1282], loss: 0.2034215772, base lr: 1.09e-07, mem: 1655/10084MB, eta: 00:03:39
+2026-09-08 20:35:34,199 reid INFO: epoch[48/50], iteration[400/1282], loss: 0.1942518469, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:03:16
+2026-09-08 20:35:56,371 reid INFO: epoch[48/50], iteration[500/1282], loss: 0.1956360445, base lr: 1.09e-07, mem: 1656/10084MB, eta: 00:02:53
+2026-09-08 20:36:18,544 reid INFO: epoch[48/50], iteration[600/1282], loss: 0.2350313326, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:02:31
+2026-09-08 20:36:40,727 reid INFO: epoch[48/50], iteration[700/1282], loss: 0.2408800836, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:02:09
+2026-09-08 20:37:02,916 reid INFO: epoch[48/50], iteration[800/1282], loss: 0.2598651900, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:01:47
+2026-09-08 20:37:25,106 reid INFO: epoch[48/50], iteration[900/1282], loss: 0.2622771518, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:01:24
+2026-09-08 20:37:47,300 reid INFO: epoch[48/50], iteration[1000/1282], loss: 0.2755141663, base lr: 1.09e-07, mem: 1655/10084MB, eta: 00:01:02
+2026-09-08 20:38:09,525 reid INFO: epoch[48/50], iteration[1100/1282], loss: 0.2790307391, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:00:40
+2026-09-08 20:38:31,752 reid INFO: epoch[48/50], iteration[1200/1282], loss: 0.2878982789, base lr: 1.09e-07, mem: 1654/10084MB, eta: 00:00:18
+2026-09-08 20:38:49,913 reid INFO: epoch 48 done. time: 4.7m, per batch: 0.222s, speed: 144.0 samples/s
+2026-09-08 20:38:49,913 reid INFO: validation results - epoch: 48
+2026-09-08 20:38:59,769 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.3 | 100.0 | 100.0 | 298.3 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:39:24,514 reid INFO: epoch[49/50], iteration[100/1282], loss: 0.2658988504, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:04:27
+2026-09-08 20:39:46,695 reid INFO: epoch[49/50], iteration[200/1282], loss: 0.2571857324, base lr: 4.87e-08, mem: 1656/10056MB, eta: 00:04:02
+2026-09-08 20:40:08,911 reid INFO: epoch[49/50], iteration[300/1282], loss: 0.3303989183, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:03:39
+2026-09-08 20:40:31,126 reid INFO: epoch[49/50], iteration[400/1282], loss: 0.2871709838, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:03:16
+2026-09-08 20:40:53,340 reid INFO: epoch[49/50], iteration[500/1282], loss: 0.2959907953, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:02:54
+2026-09-08 20:41:15,551 reid INFO: epoch[49/50], iteration[600/1282], loss: 0.2677156987, base lr: 4.87e-08, mem: 1654/10056MB, eta: 00:02:31
+2026-09-08 20:41:37,773 reid INFO: epoch[49/50], iteration[700/1282], loss: 0.2809108656, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:02:09
+2026-09-08 20:41:59,991 reid INFO: epoch[49/50], iteration[800/1282], loss: 0.2749949855, base lr: 4.87e-08, mem: 1654/10056MB, eta: 00:01:47
+2026-09-08 20:42:22,215 reid INFO: epoch[49/50], iteration[900/1282], loss: 0.2680685561, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:01:25
+2026-09-08 20:42:44,452 reid INFO: epoch[49/50], iteration[1000/1282], loss: 0.2755292973, base lr: 4.87e-08, mem: 1654/10056MB, eta: 00:01:02
+2026-09-08 20:43:06,694 reid INFO: epoch[49/50], iteration[1100/1282], loss: 0.2683455875, base lr: 4.87e-08, mem: 1656/10056MB, eta: 00:00:40
+2026-09-08 20:43:28,937 reid INFO: epoch[49/50], iteration[1200/1282], loss: 0.2720188459, base lr: 4.87e-08, mem: 1655/10056MB, eta: 00:00:18
+2026-09-08 20:43:47,126 reid INFO: epoch 49 done. time: 4.8m, per batch: 0.222s, speed: 143.8 samples/s
+2026-09-08 20:43:47,126 reid INFO: validation results - epoch: 49
+2026-09-08 20:43:57,048 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.4 | 100.0 | 100.0 | 298.4 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:44:22,292 reid INFO: epoch[50/50], iteration[100/1282], loss: 0.1979003418, base lr: 1.22e-08, mem: 1655/10056MB, eta: 00:04:32
+2026-09-08 20:44:44,722 reid INFO: epoch[50/50], iteration[200/1282], loss: 0.2394454750, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:04:06
+2026-09-08 20:45:07,124 reid INFO: epoch[50/50], iteration[300/1282], loss: 0.2443926516, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:03:42
+2026-09-08 20:45:29,529 reid INFO: epoch[50/50], iteration[400/1282], loss: 0.2572908829, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:03:19
+2026-09-08 20:45:51,938 reid INFO: epoch[50/50], iteration[500/1282], loss: 0.2795679345, base lr: 1.22e-08, mem: 1655/10056MB, eta: 00:02:56
+2026-09-08 20:46:14,386 reid INFO: epoch[50/50], iteration[600/1282], loss: 0.2715304442, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:02:33
+2026-09-08 20:46:36,799 reid INFO: epoch[50/50], iteration[700/1282], loss: 0.2730437940, base lr: 1.22e-08, mem: 1656/10056MB, eta: 00:02:11
+2026-09-08 20:46:59,151 reid INFO: epoch[50/50], iteration[800/1282], loss: 0.2678306521, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:01:48
+2026-09-08 20:47:21,525 reid INFO: epoch[50/50], iteration[900/1282], loss: 0.2687327694, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:01:25
+2026-09-08 20:47:43,912 reid INFO: epoch[50/50], iteration[1000/1282], loss: 0.2685332162, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:01:03
+2026-09-08 20:48:06,312 reid INFO: epoch[50/50], iteration[1100/1282], loss: 0.2691224876, base lr: 1.22e-08, mem: 1654/10056MB, eta: 00:00:40
+2026-09-08 20:48:28,699 reid INFO: epoch[50/50], iteration[1200/1282], loss: 0.2688817803, base lr: 1.22e-08, mem: 1656/10056MB, eta: 00:00:18
+2026-09-08 20:48:47,015 reid INFO: epoch 50 done. time: 4.8m, per batch: 0.224s, speed: 142.6 samples/s
+2026-09-08 20:48:47,016 reid INFO: validation results - epoch: 50
+2026-09-08 20:48:56,928 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.3 | 100.0 | 100.0 | 298.3 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
+2026-09-08 20:48:57,080 reid INFO: best RSum: 298.36625213362595 at epoch 50
+2026-09-08 20:48:58,337 reid INFO: start final test 🚀
+2026-09-08 20:48:58,393 reid INFO: total training samples: 41010
+2026-09-08 20:48:58,393 reid INFO: total testing samples: 4101
+2026-09-08 20:49:11,769 reid INFO: 
++------+------+-------+-------+-------+-----+-----+
+| item |  R1  |   R5  |  R10  |  RSum | MdR | MnR |
++------+------+-------+-------+-------+-----+-----+
+| sims | 98.4 | 100.0 | 100.0 | 298.4 | 1.0 | 1.0 |
++------+------+-------+-------+-------+-----+-----+
