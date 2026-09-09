@@ -30,11 +30,11 @@ A CLIP-based person re-identification pipeline covering training, evaluation, an
 ## 📋 Table of Contents
 
 - [Highlights](#-highlights)
-- [What's New](#-whats-new)
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Quick Start](#quick-start)
+- [Updates](#-updates)
+- [Overview](#-overview)
+- [Architecture](#-architecture)
+- [Project Structure](#-project-structure)
+- [Quick Start](#-quick-start)
   - [Installation](#installation)
   - [Dataset Preparation](#dataset-preparation)
   - [Download Pre-trained Weights](#download-pre-trained-weights)
@@ -42,26 +42,27 @@ A CLIP-based person re-identification pipeline covering training, evaluation, an
   - [Testing / Evaluation](#testing--evaluation)
   - [Online Inference](#online-inference)
 - [Results](#-results)
-- [Model Zoo](#model-zoo)
-- [Feature Enhancement Modules](#feature-enhancement-modules)
-- [Evaluation Metrics](#evaluation-metrics)
+- [Model Zoo](#-model-zoo)
+- [Feature Enhancement Modules](#-feature-enhancement-modules)
+- [Similarity Formulations](#-similarity-formulations)
+- [Evaluation Metrics](#-evaluation-metrics)
 - [Citation](#-citation)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
 
 ---
 
-## 🆕 What's New
+## 📣 Updates
 
-- **[2026.09]** Added baseline training results (ViT-B/32, 50 epochs, **R1=98.4%**, **R5=100.0%**, **R10=100.0%**).
-- **[2026.09]** Added `experiments/` directory to track training runs with configs, logs, and TensorBoard events.
-- **[2026.09]** Refined README to strictly match the actual codebase: corrected `model/cluster.py` description, removed non-existent CLI flags, fixed deployment paths, and expanded the API reference for `ReIDInfer`.
-- **[2026.08]** Re-organized project structure; added self-contained `online/` inference module with standardized English docstrings; added architecture diagrams and detailed README.
 - **[2025.08]** Initial release — complete training & evaluation pipeline.
+- **[2026.08]** Re-organized project structure; added self-contained `online/` inference module with standardized English docstrings; added architecture diagrams and detailed README.
+- **[2026.09]** Refined README to strictly match the actual codebase: corrected `model/cluster.py` description, removed non-existent CLI flags, fixed deployment paths, and expanded the API reference for `ReIDInfer`.
+- **[2026.09]** Added `experiments/` directory to track training runs with configs, logs, and TensorBoard events.
+- **[2026.09]** Added baseline training results (ViT-B/32, 50 epochs, **R1=98.4%**, **R5=100.0%**, **R10=100.0%**).
 
 ---
 
-## Overview
+## 🎯 Overview
 
 Person Re-Identification aims to match a target person image against a gallery of candidate images, typically captured from different camera views. This project provides two unified workflows:
 
@@ -83,7 +84,7 @@ Person Re-Identification aims to match a target person image against a gallery o
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ### Training Pipeline
 
@@ -176,7 +177,7 @@ Person Re-Identification aims to match a target person image against a gallery o
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 reid/
@@ -247,7 +248,7 @@ reid/
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Installation
 
@@ -491,7 +492,7 @@ Model: **ViT-B/32** | Dataset: **RSTPReid** | Epochs: **50**
 
 ---
 
-## Model Zoo
+## 🤖 Model Zoo
 
 ### CLIP Variants
 
@@ -515,7 +516,7 @@ Positional embeddings are bilinearly interpolated when loading weights with diff
 
 ---
 
-## Feature Enhancement Modules
+## 🔧 Feature Enhancement Modules
 
 The codebase includes `model/cluster.py`, a collection of **patch-token manipulation modules** for ViT variants:
 
@@ -543,7 +544,7 @@ Standard transformer block with:
 
 ---
 
-## Similarity Formulations
+## 📐 Similarity Formulations
 
 Person similarity is computed as **cosine similarity** between L2-normalized feature vectors:
 
@@ -566,7 +567,7 @@ where $\tau = 1 / \text{temperature}$ is the learnable temperature, and diagonal
 
 ---
 
-## Evaluation Metrics
+## 📈 Evaluation Metrics
 
 | Metric | Symbol | Description |
 |--------|:------:|-------------|
@@ -580,7 +581,7 @@ where $\tau = 1 / \text{temperature}$ is the learnable temperature, and diagonal
 
 ---
 
-## Citation
+## 📚 Citation
 
 If you find this work useful, please cite:
 
@@ -596,14 +597,14 @@ If you find this work useful, please cite:
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - **[OpenAI CLIP](https://github.com/openai/CLIP)** — Pretrained vision-language representations and tokenizer.
 - **[Ultralytics YOLOv8](https://docs.ultralytics.com/models/yolov8/)** — Real-time object detection for the online inference pipeline.
 
 ---
 
-## Contact
+## 📬 Contact
 
 📧 **Email:** [xinl067@193.com](mailto:xinl067@193.com)
 
